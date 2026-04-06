@@ -18,17 +18,17 @@ const portfolioData: PortfolioData[] = [
   },
   {
     portfolio_image: "/works/gabfit.jpg",
-    portfolio_title: "Academy.co",
-    portfolio_tags: ["Product Design", "Interection Design"],
+    portfolio_title: "Suri",
+    portfolio_tags: ["Video Editing", "Motion Graphics"],
+  },
+  {
+    portfolio_image: "/works/star.jpg",
+    portfolio_title: "Star Cuisine Restaurant",
+    portfolio_tags: ["Brand identity design", "Social Media Content"],
   },
   {
     portfolio_image: "/works/gabfit.jpg",
-    portfolio_title: "Genome",
-    portfolio_tags: ["Brand identity design", "UX Research"],
-  },
-  {
-    portfolio_image: "/works/gabfit.jpg",
-    portfolio_title: "Hotto",
+    portfolio_title: "NextGen ITES",
     portfolio_tags: ["Visual Storytelling", "Web & Mobile Design"],
   },
 ];

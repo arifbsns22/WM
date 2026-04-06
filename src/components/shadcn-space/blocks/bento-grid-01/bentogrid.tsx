@@ -30,8 +30,8 @@ const Bentogrid = () => {
                     Website Development
                   </h3>
                   <p className="text-base font-normal text-muted-foreground">
-                    A collection of custom-built, highly flexible Tailwind CSS
-                    components
+                    Mordern Website that focused on building a strong brand
+                    identity for a business.
                   </p>
                 </div>
               </div>
@@ -46,9 +46,10 @@ const Bentogrid = () => {
                     Video Editing
                   </h3>
                   <p className="text-base font-normal text-muted-foreground">
-                    Build powerful dashboards in no time with per-built Tailwind
-                    components and layouts. Whether you're creating admin
-                    panels, analytics dashboards, or SaaS back-ends.
+                    Digital advertising where businesses pay to promote their
+                    products and services.It can be an effective way to reach a
+                    large audience and drive traffic to a website or social
+                    media page.
                   </p>
                 </div>
               </div>
@@ -73,8 +74,9 @@ const Bentogrid = () => {
                     Graphic Design
                   </h3>
                   <p className="text-base font-normal text-muted-foreground">
-                    We have LTR and RTL options along with different layout
-                    options as well.
+                    Graphic design is the art and practice of creating visual
+                    content to communicate information and ideas to a specific
+                    audience.
                   </p>
                 </div>
               </div>
@@ -99,8 +101,9 @@ const Bentogrid = () => {
                     Social Media Marketing
                   </h3>
                   <p className="text-base font-normal text-muted-foreground">
-                    A well-structured and easy-to-follow documentation for your
-                    project.
+                    Creating engaging social media content that resonates with
+                    the target audience.Reach a large audience and drive traffic
+                    to a social media page.
                   </p>
                 </div>
               </div>
@@ -119,8 +122,9 @@ const Bentogrid = () => {
                     3D Animation
                   </h3>
                   <p className="text-base font-normal text-muted-foreground">
-                    Unlimited color options to match with your brand instantly
-                    and easily.
+                    3D animation is the process of creating three-dimensional
+                    moving images in a digital environment. It's good for
+                    creating 3D visual.
                   </p>
                 </div>
               </div>
