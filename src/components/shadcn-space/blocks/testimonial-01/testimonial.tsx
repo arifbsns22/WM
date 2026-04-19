@@ -40,14 +40,15 @@ const Testimonials = () => {
             >
               <Card className="bg-[url('https://images.shadcnspace.com/assets/backgrounds/testimonials-userBg-01.webp')] object-cover bg-center bg-cover bg-no-repeat border border-border h-full w-full md:min-h-96 p-8 md:pe-16 rounded-2xl">
                 <CardContent className="flex flex-col items-start justify-between gap-24 p-0 h-full">
-                   <p className="text-white/70 text-base font-normal">
+                  <p className="text-white/70 text-base font-normal">
                     Customer stories
                   </p>
                   <div className="flex flex-col gap-6">
                     <p className="text-white text-xl lg:text-2xl font-medium">
-                      Shadn Space expertise transformed my vision into success
-                      with creativity, precision, and a deep understanding of my
-                      goals.
+                      Their customer support team is amazing! They walked me
+                      through every feature, and now I feel confident for my
+                      day-to-day Online Business needs. I’ve saved both time and
+                      money since switching!”
                     </p>
                     <div>
                       <p className="text-white text-base font-medium">
@@ -67,7 +68,7 @@ const Testimonials = () => {
               transition={{ duration: 1, delay: 0.2, ease: "easeInOut" }}
               className="col-span-1 lg:col-span-4"
             >
-              <Card className="bg-blue-500 border border-border h-full w-full md:min-h-96 p-8 rounded-2xl">
+              <Card className="bg-purple-800 border border-border h-full w-full md:min-h-96 p-8 rounded-2xl">
                 <CardContent className="flex flex-col items-start justify-between gap-24 p-0 h-full">
                   <p className="text-white/70 text-base font-normal">
                     Facts & numbers
@@ -77,7 +78,7 @@ const Testimonials = () => {
                       91%
                     </p>
                     <p className="text-white text-xl lg:text-2xl font-medium">
-                      clients recommend our design services.”
+                      Clients recommend our Video Editing services.”
                     </p>
                   </div>
                 </CardContent>
@@ -89,7 +90,7 @@ const Testimonials = () => {
               transition={{ duration: 1, delay: 0.5, ease: "easeInOut" }}
               className="col-span-1 lg:col-span-4"
             >
-              <Card className="bg-gray-950 border border-border h-full w-full p-8 rounded-2xl">
+              <Card className="bg-red-500 border border-border h-full w-full p-8 rounded-2xl">
                 <CardContent className="flex flex-col items-start justify-between gap-6 p-0 h-full">
                   <div className="flex flex-col items-start gap-2">
                     <p className="text-white/70 text-base font-normal">
@@ -101,9 +102,9 @@ const Testimonials = () => {
                     </p>
                   </div>
                   <img
-                    src="https://images.shadcnspace.com/assets/backgrounds/testimonials-bg-01.webp"
+                    src="works/gabfit.jpg"
                     alt="background-img"
-                    width={'100%'}
+                    width={"100%"}
                     height={220}
                   />
                 </CardContent>
@@ -122,17 +123,18 @@ const Testimonials = () => {
                       Customer stories
                     </p>
                     <p className="text-card-foreground text-xl lg:text-2xl font-medium">
-                      “Shadcn Space Agency brought our ideas to life with
-                      exceptional creativity and precision, exceeding
-                      expectations.”
+                      Working with Watermelon Digital has been an amazing
+                      experience! Their social media marketing and graphic
+                      design helped us reach a wider audience and grow our brand
+                      awareness significantly.
                     </p>
                   </div>
                   <div>
                     <p className="text-card-foreground text-base font-medium">
-                      Sarah Mitchell
+                      Rakib Hasan
                     </p>
                     <p className="text-muted-foreground text-sm font-normal">
-                      Marketing Head at TalentConnect
+                      Creative Edge Studio
                     </p>
                   </div>
                 </CardContent>

@@ -246,9 +246,9 @@ function HeroOrbitDeck() {
   );
 
   const metrics = [
-    { label: "Average ramp", value: "11d" },
-    { label: "Cycles synced", value: "08" },
-    { label: "Satisfaction", value: "96%" },
+    { label: "Total Project Done", value: "93+" },
+    { label: "Years of Experience", value: "9+" },
+    { label: "Country Served", value: "7+" },
   ];
 
   const modes = useMemo(
@@ -362,7 +362,7 @@ function HeroOrbitDeck() {
               <span
                 className={`inline-flex items-center gap-2 rounded-full border px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.4em] ${palette.border} ${palette.accent}`}
               >
-                Monochrome Hero Deck
+                Our Services
               </span>
               <button
                 type="button"
@@ -374,13 +374,11 @@ function HeroOrbitDeck() {
             </div>
             <div className="space-y-6">
               <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
-                HERO3: command deck for launches that demand monochrome
-                precision.
+                The services we’re best at...
               </h1>
               <p className={`max-w-2xl text-base md:text-lg ${palette.subtle}`}>
-                A hero built to stage design systems, telemetry, and imagery in
-                perfect grayscale. The deck combines live toggles, orbital
-                overlays, and adaptive motion for a distinct library entry.
+                Connect the dots between customer needs and your product or
+                service delivery workflows.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -389,10 +387,9 @@ function HeroOrbitDeck() {
               >
                 <span className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-current animate-pulse" />
-                  Launch ready
+                  Our Success →
                 </span>
                 <span className="opacity-60">∙</span>
-                <span>Monochrome enforced</span>
               </div>
               <div
                 className={`flex divide-x divide-white/10 overflow-hidden rounded-full border text-xs uppercase tracking-[0.35em] ${palette.border}`}

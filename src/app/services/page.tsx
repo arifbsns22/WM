@@ -5,12 +5,7 @@ import { HeroOrbitDeck } from "@/components/hero-modern";
 import Bentogrid from "@/components/shadcn-space/blocks/bento-grid-01/bentogrid";
 
 const ServicePage = () => {
-  return (
-    <>
-      <HeroOrbitDeck />
-      <Bentogrid />
-    </>
-  );
+  return <></>;
 };
 
 export default ServicePage;

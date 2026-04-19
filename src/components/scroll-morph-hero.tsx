@@ -2,6 +2,9 @@
 
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { motion, useTransform, useSpring, useMotionValue } from "framer-motion";
+import CTA from "./shadcn-space/blocks/cta-01/cta";
+import Faq from "./shadcn-space/blocks/faq-01/faq";
+import Testimonials from "./shadcn-space/blocks/testimonial-01/testimonial";
 
 // --- Utility ---
 // function cn(...inputs: ClassValue[]) {
@@ -439,14 +442,16 @@ export default function IntroAnimation() {
             }
 
             return (
-              <FlipCard
-                key={i}
-                src={src}
-                index={i}
-                total={TOTAL_IMAGES}
-                phase={introPhase} // Pass intro phase for initial animations
-                target={target}
-              />
+              <>
+                <FlipCard
+                  key={i}
+                  src={src}
+                  index={i}
+                  total={TOTAL_IMAGES}
+                  phase={introPhase} // Pass intro phase for initial animations
+                  target={target}
+                />
+              </>
             );
           })}
         </div>

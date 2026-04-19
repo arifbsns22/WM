@@ -10,29 +10,24 @@ import { cn } from "@/lib/utils";
 
 const FAQ_DATA = [
   {
-    question: "What services does Shadcn Space offer?",
+    question: "What services does Watermelon Digital provide?",
     answer:
-      "We offer a wide range of services including web development, app development, and digital marketing.",
+      "We offer a full range of digital marketing services, including social media management, Facebook & Google ads, branding, graphic design, content creation, video editing, SEO, and website promotion.",
   },
   {
-    question: "How long does a typical project take?",
+    question: "How can I contact Watermelon Digital?",
     answer:
-      "The time it takes to complete a project depends on the complexity of the project and the scope of the work.",
+      "You can reach us through our Facebook page, WhatsApp, or directly via phone or email. Our team is always ready to respond quickly and discuss your project needs.",
   },
   {
-    question: "How is pricing structured at Awake Agency?",
+    question: "What makes Watermelon Digital different from others?",
     answer:
-      "Pricing is based on the complexity of the project and the scope of the work.",
+      "Our team focuses on creativity, strategy, and real results. We don’t just post content — we build brand identity and help businesses grow through smart marketing and design.",
   },
   {
-    question: "Do you offer ongoing support after project completion?",
+    question: "Can I visit your office?",
     answer:
-      "Absolutely! We offer comprehensive post-launch support to ensure a seamless implementation and provide ongoing maintenance packages tailored to clients who need regular updates or technical assistance. Our commitment doesn’t end at launch — we’re here to help you every step of the way.",
-  },
-  {
-    question: "How often will I receive updates on my project?",
-    answer:
-      "We provide updates on a regular basis to ensure that your project is running smoothly and that you are aware of any changes or updates to the project.",
+      "Of course! You’re welcome to visit our office for a free consultation. (You can update this with your office address- Ferdous Tower, Zilla School Mor, Mymensingh",
   },
 ];
 
