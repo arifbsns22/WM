@@ -1,9 +1,7 @@
-import AboutAndStats01 from "@/components/shadcn-space/blocks/about-us-01"
+import AboutAndStats01 from "@/components/home-page/about-us";
 
 const page = () => {
-  return (
-    <AboutAndStats01/>
-  )
-}
+  return <AboutAndStats01 />;
+};
 
-export default page
+export default page;

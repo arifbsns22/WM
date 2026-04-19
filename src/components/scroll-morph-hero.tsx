@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { motion, useTransform, useSpring, useMotionValue } from "framer-motion";
-import CTA from "./shadcn-space/blocks/cta-01/cta";
-import Faq from "./shadcn-space/blocks/faq-01/faq";
-import Testimonials from "./shadcn-space/blocks/testimonial-01/testimonial";
+import CTA from "./common components/cta/cta";
+import Faq from "./common components/faq/faq";
+import Testimonials from "./common components/testimonial/testimonial";
 
 // --- Utility ---
 // function cn(...inputs: ClassValue[]) {

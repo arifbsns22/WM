@@ -1,14 +1,12 @@
-import AboutUs1 from "@/components/mvpblocks/about-us-1";
-import CTA from "@/components/shadcn-space/blocks/cta-01/cta";
-import Services from "@/components/shadcn-space/blocks/services-02/services";
-import Team from "@/components/shadcn-space/blocks/team-01/team";
-import Testimonials from "@/components/shadcn-space/blocks/testimonial-01/testimonial";
-import React from "react";
+import AboutUs from "@/components/about-page/about-us";
+import CTA from "@/components/common components/cta/cta";
+import Team from "@/components/common components/team/team";
+import Testimonials from "@/components/common components/testimonial/testimonial";
 
 const AboutUsPage = () => {
   return (
     <>
-      <AboutUs1 />
+      <AboutUs />
       <Team />
       <Testimonials />
       <CTA />

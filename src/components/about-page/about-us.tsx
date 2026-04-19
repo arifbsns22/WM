@@ -65,7 +65,7 @@ const defaultValues: AboutUsProps["values"] = [
   },
 ];
 
-export default function AboutUs1() {
+export default function AboutUs() {
   const aboutData = {
     title: "About Us",
     subtitle:

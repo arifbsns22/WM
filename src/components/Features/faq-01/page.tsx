@@ -1,7 +1,5 @@
-import Faq from "@/components/shadcn-space/blocks/faq-01/faq"
+import Faq from "@/components/common components/faq/faq";
 
 export default function FaqPage() {
-    return (
-        <Faq />
-    )
+  return <Faq />;
 }

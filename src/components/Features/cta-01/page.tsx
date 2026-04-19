@@ -1,9 +1,9 @@
-import CTA from "@/components/shadcn-space/blocks/cta-01/cta";
+import CTA from "@/components/common components/cta/cta";
 
 export default function Page() {
-    return (
-        <main>
-            <CTA />
-        </main>
-    )
+  return (
+    <main>
+      <CTA />
+    </main>
+  );
 }

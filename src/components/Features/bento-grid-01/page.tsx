@@ -1,4 +1,4 @@
-import Bentogrid from "@/components/shadcn-space/blocks/bento-grid-01/bentogrid";
+import Bentogrid from "@/components/home-page/bento-grid/bentogrid";
 
 const Page = () => {
   return <Bentogrid />;

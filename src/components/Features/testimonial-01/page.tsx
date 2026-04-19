@@ -1,4 +1,4 @@
-import Testimonials from "@/components/shadcn-space/blocks/testimonial-01/testimonial";
+import Testimonials from "@/components/common components/testimonial/testimonial";
 
 const Testimonials01Page = () => {
   return <Testimonials />;

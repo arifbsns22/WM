@@ -1,5 +1,5 @@
-import ContactInfo from "@/components/shadcn-space/blocks/contact-01/contact-info";
-import ContactForm from "@/components/shadcn-space/blocks/contact-01/contact-form";
+import ContactInfo from "@/components/contact page/contact-info";
+import ContactForm from "@/components/contact page/contact-form";
 
 const Contact = () => {
   return (

@@ -1,4 +1,4 @@
-import Team from "@/components/shadcn-space/blocks/team-01/team";
+import Team from "@/components/common components/team/team";
 
 const Team01 = () => {
   return (

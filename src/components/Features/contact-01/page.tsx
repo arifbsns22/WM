@@ -1,4 +1,4 @@
-import Contact from "@/components/shadcn-space/blocks/contact-01";
+import Contact from "@/components/contact page";
 
 const Page = () => {
   return <Contact />;

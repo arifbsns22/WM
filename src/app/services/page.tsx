@@ -1,11 +1,16 @@
 "use client";
-import React from "react";
 
-import { HeroOrbitDeck } from "@/components/hero-modern";
-import Bentogrid from "@/components/shadcn-space/blocks/bento-grid-01/bentogrid";
+import Bentogrid from "@/components/home-page/bento-grid/bentogrid";
+import { HeroSection } from "@/components/serves-page/hero-section";
+import Features from "./features";
 
 const ServicePage = () => {
-  return <></>;
+  return (
+    <>
+      <HeroSection />
+      <Features />
+    </>
+  );
 };
 
 export default ServicePage;
