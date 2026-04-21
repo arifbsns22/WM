@@ -1,14 +1,16 @@
 "use client";
-
-import Bentogrid from "@/components/home-page/bento-grid/bentogrid";
 import { HeroSection } from "@/components/serves-page/hero-section";
-import Features from "./features";
+import ServiceListCards from "@/components/common components/services-list/service-cards";
+import Faq from "@/components/common components/faq/faq";
+import CTA from "@/components/common components/cta/cta";
 
 const ServicePage = () => {
   return (
     <>
       <HeroSection />
-      <Features />
+      <ServiceListCards/>
+      <Faq/>
+      <CTA/>
     </>
   );
 };

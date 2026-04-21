@@ -2,7 +2,7 @@
 
 import { Separator } from "@/components/ui/separator";
 import { Marquee } from "@/components/shadcn-space/animations/marquee";
-import TextTypeEffect from "@/components/mvpblocks/text-type-demo";
+import TextTypeEffect from "@/components/common components/animated-text/animated-text-type";
 
 type BrandList = {
   image: string;
