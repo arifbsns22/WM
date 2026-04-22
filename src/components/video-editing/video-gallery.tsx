@@ -584,13 +584,13 @@ const VideoGallery: React.FC = () => {
           >
             <motion.h2
               variants={itemAnimation}
-              className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 text-black tracking-tight"
+              className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4text-white tracking-tight"
             >
               Featured Videos
             </motion.h2>
             <motion.div
               variants={itemAnimation}
-              className="w-24 h-1 bg-white mx-auto mb-6"
+              className="w-24 h-1 bg-black mx-auto mb-6"
             />
             <motion.p
               variants={itemAnimation}
@@ -908,15 +908,6 @@ const VideoGallery: React.FC = () => {
           )}
         </AnimatePresence>
       </section>
-      <div>
-        <Image
-          src="/video-editing.jpg"
-          alt="video-editing"
-          width={5000}
-          height={500}
-        />
-      </div>
-      <AnimatedTextType />
     </>
   );
 };
