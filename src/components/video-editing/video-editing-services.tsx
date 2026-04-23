@@ -1,28 +1,28 @@
 'use client';
-import { Zap, Cpu, Fingerprint, Pencil, Settings2, Sparkles } from 'lucide-react';
+import { Zap, Pencil, Settings2, Sparkles, Infinity, Lock, Smartphone } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
 import { FeatureCard } from './grid-feature-cards';
 
 const features = [
 	{
-		title: 'Faaast',
+		title: 'Fast Reliable Delivery Service',
 		icon: Zap,
-		description: 'It supports an entire helping developers and innovate.',
+		description: 'We meet deadlines with quick turnaround times without compromising quality.',
 	},
 	{
-		title: 'Powerful',
-		icon: Cpu,
-		description: 'It supports an entire helping developers and businesses.',
+		title: 'Unlimited Flexible Revision Support',
+		icon: Infinity,
+		description: 'Your satisfaction comes first. We provide revisions until your video aligns with your creative vision.',
 	},
 	{
-		title: 'Security',
-		icon: Fingerprint,
-		description: 'It supports an helping developers businesses.',
+		title: 'Optimized for Every Platform',
+		icon: Smartphone,
+		description: 'Vertical, horizontal, square—we deliver your final video in the perfect format for any platform or device.',
 	},
 	{
-		title: 'Customization',
-		icon: Pencil,
-		description: 'It supports helping developers and businesses innovate.',
+		title: 'Safe & Secure File Handling',
+		icon: Lock,
+		description: 'Your footage and project files are handled privately and securely from upload to final delivery.',
 	},
 	{
 		title: 'Control',
@@ -38,14 +38,14 @@ const features = [
 
 export default function VideoEditingGrid() {
 	return (
-		<section className="py-16 md:py-32">
+		<section className="py-16 md:py-20">
 			<div className="mx-auto w-full max-w-5xl space-y-8 px-4">
 				<AnimatedContainer className="mx-auto max-w-3xl text-center">
 					<h2 className="text-3xl font-bold tracking-wide text-balance md:text-4xl lg:text-5xl xl:font-extrabold">
-						Power. Speed. Control.
+						Why Choose Our Video Editing Service
 					</h2>
 					<p className="text-muted-foreground mt-4 text-sm tracking-wide text-balance md:text-base">
-						Everything you need to build fast, secure, scalable apps.
+						Transforming your vision into stunning visual stories
 					</p>
 				</AnimatedContainer>
 

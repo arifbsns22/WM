@@ -572,7 +572,7 @@ const VideoGallery: React.FC = () => {
     <>
       <section
         id="gallery"
-        className="py-12 sm:py-16 md:py-20 min-h-screen relative overflow-hidden"
+        className="py-6 sm:py-16 md:py-20 min-h-screen relative overflow-hidden"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -586,7 +586,7 @@ const VideoGallery: React.FC = () => {
               variants={itemAnimation}
               className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4text-white tracking-tight"
             >
-              Featured Videos
+              Our Popular Portfolio
             </motion.h2>
             <motion.div
               variants={itemAnimation}
