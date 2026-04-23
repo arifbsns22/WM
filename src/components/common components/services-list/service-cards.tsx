@@ -8,8 +8,8 @@ export default function ServiceListCards() {
           <div className="text-center">
             <h1 className="text-foreground text-3xl md:text-5xl">
               <TextType
-                text={['Our', 'All', 'Services']}
-                typingSpeed={75}
+                text={['Crafting fast, modern, user-friendly web experiences', 'Designs that make your brand stand out', 'Turning raw footage into captivating stories','Boosting brands with powerful social strategies','Building smart solutions tailored to your needs','Bringing ideas to life in stunning 3D']}
+                typingSpeed={70}
                 pauseDuration={1500}
                 showCursor={true}
                 cursorCharacter="|"
@@ -21,71 +21,73 @@ export default function ServiceListCards() {
     <div className="grid grid-rows-2">
         <div className="flex items-center justify-center my-8 gap-20">
         <CardFlip
-            title="ariful haque mohosin"
-            subtitle="Launch your idea in record time"
-            description="Copy, paste, customize—and launch your MVP faster than ever with our developer-first component library."
+            title="Web Development"
+            subtitle="Build fast, modern, responsive web experiences"
+            description="Professional web development creating fast, responsive, SEO-optimized websites that enhance user experience, brand visibility, and online growth."
             features={[
-            "Copy & Paste Ready",
-            "Developer-First", 
-            "MVP Optimized",
-            "Zero Setup Required"
+            "Ecommerce",
+            "Landing page", 
+            "Shopify",
+            "Agency"
             ]}
         />
         <CardFlip
-            title="sadman sakib muhit"
-            subtitle="Launch your idea in record time"
-            description="Copy, paste, customize—and launch your MVP faster than ever with our developer-first component library."
+            title="Graphic Design"
+            subtitle="Create visually appealing designs for brands"
+            description="Creative graphic design delivering impactful visuals, strong branding, and marketing materials that attract audiences, increase engagement, and conversions."
             features={[
-            "Copy & Paste Ready",
-            "Developer-First", 
-            "MVP Optimized",
-            "Zero Setup Required"
+            "Logo & Branding",
+            "Social Media Graphics", 
+            "Marketing Materials",
+            "Digital & Print Design",
+            "Product Photography",
+            "Packageing Design"
             ]}
         />
         <CardFlip
-            title="Build MVPs Fast"
-            subtitle="Launch your idea in record time"
-            description="Copy, paste, customize—and launch your MVP faster than ever with our developer-first component library."
+            title="Video Editing"
+            subtitle="Create engaging, polished videos with professional editing"
+            description="Professional video editing transforming raw footage into polished, engaging content with smooth transitions, refined audio, branding, and storytelling."
             features={[
-            "Copy & Paste Ready",
-            "Developer-First", 
-            "MVP Optimized",
-            "Zero Setup Required"
+            "Social Media Video Editing",
+            "YouTube Video Editing", 
+            "Promotional & Business Videos",
+            "Motion Graphics & 3D Design",
+            "Reel"
             ]}
         />
     </div>
     <div className="flex items-center justify-center my-8 gap-20 mb-20">
         <CardFlip
-            title="Build MVPs Fast"
-            subtitle="Launch your idea in record time"
-            description="Copy, paste, customize—and launch your MVP faster than ever with our developer-first component library."
+            title="Social Media Marketing"
+            subtitle="Grow brands through strategic social media marketing"
+            description="Effective social media marketing creating engaging content and campaigns that grow followers, build brand awareness, and drive conversions."
             features={[
-            "Copy & Paste Ready",
-            "Developer-First", 
-            "MVP Optimized",
-            "Zero Setup Required"
+            "Meta Business Suite",
+            "Google Ads", 
+            "SEO",
+            "Business Strategy"
             ]}
         />
         <CardFlip
-            title="Build MVPs Fast"
-            subtitle="Launch your idea in record time"
-            description="Copy, paste, customize—and launch your MVP faster than ever with our developer-first component library."
+            title="Custom Software"
+            subtitle="Build tailored software solutions for businesses"
+            description="Custom software development creating tailored applications that streamline operations, improve efficiency, integrate systems, and support scalable growth long-term."
             features={[
-            "Copy & Paste Ready",
-            "Developer-First", 
-            "MVP Optimized",
-            "Zero Setup Required"
+            "CRM Software",
+            "POS Software", 
+            "ERP Software",
+            "Custom software",
             ]}
         />
         <CardFlip
-            title="Build MVPs Fast"
-            subtitle="Launch your idea in record time"
-            description="Copy, paste, customize—and launch your MVP faster than ever with our developer-first component library."
+            title="3D Design"
+            subtitle="Create realistic and creative 3D visual designs"
+            description="Creative 3D design producing realistic models, animations, and visualizations for products, architecture, branding, marketing, presentations, and digital experiences."
             features={[
-            "Copy & Paste Ready",
-            "Developer-First", 
-            "MVP Optimized",
-            "Zero Setup Required"
+            "Product",
+            "Interior", 
+            "Commercial"
             ]}
         />
     </div>
