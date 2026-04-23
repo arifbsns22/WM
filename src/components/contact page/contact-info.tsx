@@ -18,29 +18,25 @@ const brandList: BrandList[] = [
     name: "Brand 1",
   },
   {
-    image:
-      "https://images.shadcnspace.com/assets/brand-logo/logoipsum-muted-2.svg",
+    image: "/logos/clients/gabfit-logo.png",
     lightimg:
       "https://images.shadcnspace.com/assets/brand-logo/logoipsum-muted-white-2.svg",
     name: "Brand 2",
   },
   {
-    image:
-      "https://images.shadcnspace.com/assets/brand-logo/logoipsum-muted-3.svg",
+    image: "/logos/clients/gabfit-logo.png",
     lightimg:
       "https://images.shadcnspace.com/assets/brand-logo/logoipsum-muted-white-3.svg",
     name: "Brand 3",
   },
   {
-    image:
-      "https://images.shadcnspace.com/assets/brand-logo/logoipsum-muted-4.svg",
+    image: "/logos/clients/gabfit-logo.png",
     lightimg:
       "https://images.shadcnspace.com/assets/brand-logo/logoipsum-muted-white-4.svg",
     name: "Brand 4",
   },
   {
-    image:
-      "https://images.shadcnspace.com/assets/brand-logo/logoipsum-muted-5.svg",
+    image: "/logos/clients/gabfit-logo.png",
     lightimg:
       "https://images.shadcnspace.com/assets/brand-logo/logoipsum-muted-white-5.svg",
     name: "Brand 5",
@@ -66,26 +62,26 @@ const ContactInfo = () => {
         <div className="flex flex-col gap-1">
           <p className="text-sm font-normal text-muted-foreground">Phone</p>
           <a
-            href="tel:+323-25-8964"
+            href="tel:+8801750150752"
             className="text-base font-medium text-primary"
           >
-            +323-25-8964
+            +8801750150752
           </a>
         </div>
         <div className="flex flex-col gap-1">
           <p className="text-sm font-normal text-muted-foreground">Email</p>
           <a
-            href="mailto:me@shadcnspace.com"
+            href="mailto:watermelondigitalnz@gmail.com"
             className="text-base font-medium text-primary"
           >
-            me@shadcnspace.com
+            watermelondigitalnz@gmail.com
           </a>
         </div>
       </div>
       <div className="flex flex-col gap-1 animate-in fade-in slide-in-from-left-10 duration-1000 delay-100 ease-in-out fill-mode-both">
         <p className="text-sm font-normal text-muted-foreground">Location</p>
         <p className="text-base font-medium text-primary">
-          Mark Avenue, Dalls Road, New York
+          Ferdous Tower, 5th Floor, Mymensin Sadar, Mymensingh-2200, Bangladesh
         </p>
       </div>
       <Separator orientation="horizontal" />
