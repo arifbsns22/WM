@@ -16,7 +16,7 @@ export function FeatureCard({
   className,
   ...props
 }: FeatureCardPorps) {
-  const p = genRandomPattern();
+  const p = genRandomPattern(feature.title);
 
   return (
     <div className={cn("relative overflow-hidden p-6", className)} {...props}>
@@ -99,10 +99,13 @@ function GridPattern({
   );
 }
 
-function genRandomPattern(length?: number): number[][] {
+function genRandomPattern(featureTitle: string, length?: number): number[][] {
   length = length ?? 5;
-  return Array.from({ length }, () => [
-    Math.floor(Math.random() * 4) + 7, // random x between 7 and 10
-    Math.floor(Math.random() * 6) + 1, // random y between 1 and 6
+  // Use a simple hash of the title to seed the "randomness"
+  const seed = featureTitle.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  
+  return Array.from({ length }, (_, i) => [
+    ((seed + i * 7) % 4) + 7, // deterministic x between 7 and 10
+    ((seed + i * 13) % 6) + 1, // deterministic y between 1 and 6
   ]);
 }

@@ -261,10 +261,10 @@ export default function IntroAnimation() {
 
   // --- Random Scatter Positions ---
   const scatterPositions = useMemo(() => {
-    return IMAGES.map(() => ({
-      x: (Math.random() - 0.5) * 1500,
-      y: (Math.random() - 0.5) * 1000,
-      rotation: (Math.random() - 0.5) * 180,
+    return IMAGES.map((_, i) => ({
+      x: (((i * 137) % 1500) - 750),
+      y: (((i * 223) % 1000) - 500),
+      rotation: (((i * 97) % 180) - 90),
       scale: 0.6,
       opacity: 0,
     }));

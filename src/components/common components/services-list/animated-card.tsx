@@ -79,13 +79,13 @@ export default function CardFlip({
                   className={cn(
                     'h-3 w-full rounded-sm',
                     'from-primary/20 via-primary/30 to-primary/20 bg-gradient-to-r',
-                    'animate-[slideIn_2s_ease-in-out_infinite]',
+                    'animate-slide-in',
                     'opacity-0',
                   )}
                   style={{
-                    width: `${60 + Math.random() * 40}%`,
+                    width: `${60 + ((i * 7) % 40)}%`,
                     animationDelay: `${i * 0.2}s`,
-                    marginLeft: `${Math.random() * 20}%`,
+                    marginLeft: `${(i * 13) % 20}%`,
                   }}
                 />
               ))}
@@ -228,22 +228,7 @@ export default function CardFlip({
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes slideIn {
-          0% {
-            transform: translateX(-100px);
-            opacity: 0;
-          }
-          50% {
-            transform: translateX(0);
-            opacity: 0.8;
-          }
-          100% {
-            transform: translateX(100px);
-            opacity: 0;
-          }
-        }
-      `}</style>
+
     </div>
   );
 }

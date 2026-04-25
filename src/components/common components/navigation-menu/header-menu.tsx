@@ -1,4 +1,5 @@
 "use client";
+// Fixed: navigation menu items now use proper keys
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -58,7 +59,7 @@ export function Header() {
   return (
     <header
       className={cn("sticky top-0 z-50 w-full border-b border-transparent", {
-        "bg-background/95 supports-[backdrop-filter]:bg-background/50 border-border backdrop-blur-lg":
+        "bg-background/95 supports-backdrop-filter:bg-background/50 border-border backdrop-blur-lg":
           scrolled,
       })}
     >
@@ -69,19 +70,20 @@ export function Header() {
           </a>
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
-              <NavigationMenuLink className="px-4 text-1xl font-medium">
-                <a href="/" className="hover:bg-accent rounded-md p-2 ">
-                  Home
-                </a>
-              </NavigationMenuLink>
+              <a
+                href="/"
+                className="px-4 text-1xl font-medium hover:bg-accent rounded-md p-2"
+              >
+                Home
+              </a>
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent text-1xl font-medium">
                   Services
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="bg-background p-1 pr-1.5">
                   <ul className="bg-popover grid w-lg grid-cols-2 gap-2 rounded-md border p-2 shadow">
-                    {servicesLinks.map((item, i) => (
-                      <li key={i}>
+                    {servicesLinks.map((item) => (
+                      <li key={item.title}>
                         <ListItem {...item} />
                       </li>
                     ))}
@@ -106,15 +108,15 @@ export function Header() {
                 <NavigationMenuContent className="bg-background p-1 pr-1.5 pb-1.5">
                   <div className="grid w-lg grid-cols-2 gap-2">
                     <ul className="bg-popover space-y-2 rounded-md border p-2 shadow">
-                      {companyLinks.map((item, i) => (
-                        <li key={i}>
+                      {companyLinks.map((item) => (
+                        <li key={item.title}>
                           <ListItem {...item} />
                         </li>
                       ))}
                     </ul>
                     <ul className="space-y-2 p-3">
-                      {companyLinks2.map((item, i) => (
-                        <li key={i}>
+                      {companyLinks2.map((item) => (
+                        <li key={item.title}>
                           <NavigationMenuLink
                             href={item.href}
                             className="flex p-2 hover:bg-accent flex-row rounded-md items-center gap-x-2"
@@ -128,16 +130,18 @@ export function Header() {
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-              <NavigationMenuLink className="px-4 text-1xl font-medium" asChild>
-                <a href="/about" className="hover:bg-accent rounded-md p-2 ">
-                  About
-                </a>
-              </NavigationMenuLink>
-              <NavigationMenuLink className="px-4 text-1xl font-medium" asChild>
-                <a href="/contact" className="hover:bg-accent rounded-md p-2 ">
-                  Contact
-                </a>
-              </NavigationMenuLink>
+              <a
+                href="/about"
+                className="px-4 text-1xl font-medium hover:bg-accent rounded-md p-2"
+              >
+                About
+              </a>
+              <a
+                href="/contact"
+                className="px-4 text-1xl font-medium hover:bg-accent rounded-md p-2"
+              >
+                Contact
+              </a>
             </NavigationMenuList>
           </NavigationMenu>
         </div>
@@ -199,7 +203,7 @@ function MobileMenu({ open, children, className, ...props }: MobileMenuProps) {
     <div
       id="mobile-menu"
       className={cn(
-        "bg-background/95 supports-[backdrop-filter]:bg-background/50 backdrop-blur-lg",
+        "bg-background/95 supports-backdrop-filter:bg-background/50 backdrop-blur-lg",
         "fixed top-14 right-0 bottom-0 left-0 z-40 flex flex-col overflow-hidden border-y md:hidden",
       )}
     >
@@ -229,22 +233,22 @@ function ListItem({
 }: React.ComponentProps<typeof NavigationMenuLink> & LinkItem) {
   return (
     <NavigationMenuLink
+      href={href}
       className={cn(
-        "w-full flex flex-row gap-x-2 data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground rounded-sm p-2",
+        "w-full flex flex-row items-start gap-x-3 data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground rounded-sm p-2",
         className,
       )}
       {...props}
-      asChild
     >
-      <a href={href} className="flex items-start gap-3">
-        <div className="bg-background/40 flex aspect-square size-12 items-center justify-center rounded-md border shadow-sm">
-          <Icon className="text-foreground size-5" />
-        </div>
-        <div className="flex flex-col items-start justify-center">
-          <span className="font-medium">{title}</span>
-          <span className="text-muted-foreground text-xs">{description}</span>
-        </div>
-      </a>
+      <div className="bg-background/40 flex aspect-square size-12 items-center justify-center rounded-md border shadow-sm shrink-0">
+        <Icon className="text-foreground size-5" />
+      </div>
+      <div className="flex flex-col items-start justify-center">
+        <span className="font-medium text-sm">{title}</span>
+        <span className="text-muted-foreground text-xs leading-snug">
+          {description}
+        </span>
+      </div>
     </NavigationMenuLink>
   );
 }

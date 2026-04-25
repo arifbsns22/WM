@@ -124,7 +124,7 @@ export function HeroSection() {
                   className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row"
                 >
                   <div
-                    key={1}
+                    key="start-building"
                     className="bg-foreground/10 rounded-[14px] border p-0.5"
                   >
                     <Button
@@ -138,7 +138,7 @@ export function HeroSection() {
                     </Button>
                   </div>
                   <Button
-                    key={2}
+                    key="request-demo"
                     asChild
                     size="lg"
                     variant="ghost"
