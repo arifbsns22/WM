@@ -7,7 +7,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 interface ContactFormData {
   firstName: string;
@@ -29,7 +35,7 @@ const ContactForm = () => {
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -101,7 +107,10 @@ const ContactForm = () => {
                       setFormData((prev) => ({ ...prev, country: value ?? "" }))
                     }
                   >
-                    <SelectTrigger id="country" className="w-full h-9! dark:bg-background shadow-xs">
+                    <SelectTrigger
+                      id="country"
+                      className="w-full h-9! dark:bg-background shadow-xs"
+                    >
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
