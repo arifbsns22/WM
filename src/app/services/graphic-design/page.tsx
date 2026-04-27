@@ -1,4 +1,4 @@
-import IntroAnimation from "@/components/scroll-morph-hero";
+import IntroAnimation from "@/components/graphic-design/hero";
 import React from "react";
 
 const GraphicDesign = () => {

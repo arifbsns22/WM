@@ -2,9 +2,6 @@
 
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { motion, useTransform, useSpring, useMotionValue } from "framer-motion";
-import CTA from "./common components/cta/cta";
-import Faq from "./common components/faq/faq";
-import Testimonials from "./common components/testimonial/testimonial";
 
 // --- Utility ---
 // function cn(...inputs: ClassValue[]) {
@@ -105,26 +102,26 @@ const MAX_SCROLL = 3000; // Virtual scroll range
 
 // Unsplash Images
 const IMAGES = [
-  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300&q=80",
-  "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=300&q=80",
-  "https://images.unsplash.com/photo-1497366216548-37526070297c?w=300&q=80",
-  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=300&q=80",
-  "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=300&q=80",
-  "https://images.unsplash.com/photo-1506765515384-028b60a970df?w=300&q=80",
-  "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=300&q=80",
-  "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=300&q=80",
-  "https://images.unsplash.com/photo-1500485035595-cbe6f645feb1?w=300&q=80",
-  "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=300&q=80",
-  "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=300&q=80",
-  "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=300&q=80",
-  "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=300&q=80",
-  "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=300&q=80",
-  "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=300&q=80",
-  "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?w=300&q=80",
-  "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=300&q=80",
-  "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=300&q=80",
-  "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?w=300&q=80",
-  "https://images.unsplash.com/photo-1496568816309-51d7c20e3b21?w=300&q=80",
+  "/works/gd/1.jpg",
+  "/works/gd/2.jpg",
+  "/works/gd/3.jpg",
+  "/works/gd/4.jpg",
+  "/works/gd/5.jpg",
+  "/works/gd/6.jpg",
+  "/works/gd/2.jpg",
+  "/works/gd/8.jpg",
+  "/works/gd/9.jpg",
+  "/works/gd/10.jpg",
+  "/works/gd/11.jpg",
+  "/works/gd/12.jpg",
+  "/works/gd/13.jpg",
+  "/works/gd/1.jpg",
+  "/works/gd/2.jpg",
+  "/works/gd/16.jpg",
+  "/works/gd/12.jpg",
+  "/works/gd/1.jpg",
+  "/works/gd/1.jpg",
+  "/works/gd/2.jpg",
 ];
 
 // Helper for linear interpolation
@@ -261,10 +258,10 @@ export default function IntroAnimation() {
 
   // --- Random Scatter Positions ---
   const scatterPositions = useMemo(() => {
-    return IMAGES.map((_, i) => ({
-      x: (((i * 137) % 1500) - 750),
-      y: (((i * 223) % 1000) - 500),
-      rotation: (((i * 97) % 180) - 90),
+    return IMAGES.map(() => ({
+      x: (Math.random() - 0.5) * 1500,
+      y: (Math.random() - 0.5) * 1000,
+      rotation: (Math.random() - 0.5) * 180,
       scale: 0.6,
       opacity: 0,
     }));
@@ -310,8 +307,9 @@ export default function IntroAnimation() {
             transition={{ duration: 1 }}
             className="text-2xl font-medium tracking-tight text-gray-800 md:text-4xl"
           >
-            The super power <br />
-            that you need for <br /> grow your business fast
+            The super power that <br />
+            you need for growing <br />
+            your business fast
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -321,9 +319,9 @@ export default function IntroAnimation() {
                 : { opacity: 0 }
             }
             transition={{ duration: 1, delay: 0.2 }}
-            className="mt-4 text-xs font-bold tracking-[0.2em] text-gray-500"
+            className="mt-4 text-xs font-bold tracking-[0.2em] text-blue-500"
           >
-            SCROLL TO EXPLORE
+            SCROLL DOWN TO EXPLORE
           </motion.p>
         </div>
 
@@ -333,11 +331,14 @@ export default function IntroAnimation() {
           className="absolute top-[10%] z-10 flex flex-col items-center justify-center text-center pointer-events-none px-4"
         >
           <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 tracking-tight mb-4">
-            A Creative Partner for
+            Explore Our Vision
           </h2>
           <p className="text-sm md:text-base text-gray-600 max-w-lg leading-relaxed">
-            A Creative Partner for <br className="hidden md:block" />
-            100+ Successful Brands
+            Professional graphic design services that elevate your brand with
+            creative visuals.We deliver impactful designs{" "}
+            <br className="hidden md:block" />
+            that enhance engagement, strengthen identity, and communicate your
+            message clearly across all platforms.
           </p>
         </motion.div>
 
@@ -442,16 +443,14 @@ export default function IntroAnimation() {
             }
 
             return (
-              <>
-                <FlipCard
-                  key={i}
-                  src={src}
-                  index={i}
-                  total={TOTAL_IMAGES}
-                  phase={introPhase} // Pass intro phase for initial animations
-                  target={target}
-                />
-              </>
+              <FlipCard
+                key={i}
+                src={src}
+                index={i}
+                total={TOTAL_IMAGES}
+                phase={introPhase} // Pass intro phase for initial animations
+                target={target}
+              />
             );
           })}
         </div>

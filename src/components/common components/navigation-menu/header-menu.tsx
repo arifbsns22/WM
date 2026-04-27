@@ -13,7 +13,12 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { LucideIcon, MoonIcon } from "lucide-react";
+import {
+  ListTodoIcon,
+  LucideIcon,
+  MegaphoneIcon,
+  MoonIcon,
+} from "lucide-react";
 import {
   CodeIcon,
   GlobeIcon,
@@ -255,8 +260,14 @@ function ListItem({
 
 const servicesLinks: LinkItem[] = [
   {
+    title: "All Services",
+    href: "/services",
+    description: "Explore our full range of services",
+    icon: ListTodoIcon,
+  },
+  {
     title: "Website Development",
-    href: "/services/website-development",
+    href: "/services/web-development",
     description: "Build fast, mordern and responsive websites",
     icon: GlobeIcon,
   },
@@ -273,10 +284,16 @@ const servicesLinks: LinkItem[] = [
     description: "Create stunning visuals that make your brand stand out",
     icon: UserPlusIcon,
   },
+  {
+    title: "Marketing Solutions",
+    href: "/services/marketing",
+    description: "Boost your online presence and drive growth",
+    icon: MegaphoneIcon,
+  },
 
   {
     title: "3D Design",
-    href: "#",
+    href: "/services/3d-design",
     description: "Create immersive 3D experiences",
     icon: PlugIcon,
   },

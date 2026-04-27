@@ -15,29 +15,7 @@ const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
-const navigationData: NavigationSection[] = [
-  {
-    title: "Home",
-    href: "/",
-    isActive: true,
-  },
-  {
-    title: "Services",
-    href: "/services",
-  },
-  {
-    title: "Projects",
-    href: "/projects",
-  },
-  {
-    title: "About Us",
-    href: "/about",
-  },
-  {
-    title: "Contact Us",
-    href: "contact",
-  },
-];
+
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
