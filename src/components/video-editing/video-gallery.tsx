@@ -16,11 +16,7 @@ import {
   Expand,
   Minimize,
   Share2,
-  Search,
-  XCircle,
 } from "lucide-react";
-import AnimatedTextType from "../common components/animated-text/animated-text-type";
-import Image from "next/image";
 
 interface Project {
   id: number;
@@ -29,14 +25,6 @@ interface Project {
   thumbnailUrl: string;
   videoUrl: string;
   description: string;
-  client: string;
-  director: string;
-  year: string;
-  location: string;
-  camera: string;
-  lenses: string;
-  format: string;
-  aspectRatio: string;
 }
 
 interface Category {
@@ -60,289 +48,176 @@ interface AnimationVariants extends Variants {
   };
 }
 
+const getYoutubeThumbnail = (url: string) => {
+  const regExp =
+    /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = url.match(regExp);
+  return match && match[2].length === 11
+    ? `https://i.ytimg.com/vi/${match[2]}/hq720.jpg`
+    : "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800&h=600&fit=crop";
+};
+
 const categories: Category[] = [
   { id: 1, name: "Reel" },
   { id: 2, name: "Cinematic" },
   { id: 3, name: "Motion" },
-  { id: 4, name: "Comercial" },
+  { id: 4, name: "Commercial" },
 ];
 
 const projects: Project[] = [
   {
     id: 1,
-    title: "Cinematic Journey",
+    title: " ",
     category: "reel",
-    thumbnailUrl:
-      "https://img.freepik.com/premium-photo/professional-cinema-camera-recording-commercial-studio_237404-9535.jpg",
+    thumbnailUrl: getYoutubeThumbnail(
+      "https://www.youtube.com/embed/PiPCXXvQamo",
+    ),
     videoUrl: "https://www.youtube.com/embed/PiPCXXvQamo",
     description:
       "A breathtaking visual narrative exploring the depths of human emotion through stunning cinematography and compelling storytelling.",
-    client: "Independent Film",
-    director: "Alex Rodriguez",
-    year: "2024",
-    location: "Los Angeles, CA",
-    camera: "RED Komodo 6K",
-    lenses: "Zeiss Supreme Primes",
-    format: "6K RAW",
-    aspectRatio: "2.39:1",
   },
   {
     id: 2,
-    title: "Brand Vision",
+    title: "",
     category: "reel",
-    thumbnailUrl:
-      "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?w=800&h=600&fit=crop",
+    thumbnailUrl: getYoutubeThumbnail(
+      "https://www.youtube.com/embed/EXFYrtrYXZk",
+    ),
     videoUrl: "https://www.youtube.com/embed/EXFYrtrYXZk",
     description:
       "A dynamic commercial piece that captures the essence of modern lifestyle and brand identity.",
-    client: "TechCorp Inc.",
-    director: "Sarah Chen",
-    year: "2024",
-    location: "New York, NY",
-    camera: "Sony FX9",
-    lenses: "Sony G Master",
-    format: "4K XAVC",
-    aspectRatio: "16:9",
   },
   {
     id: 3,
-    title: "Documentary Truth",
+    title: " ",
     category: "reel",
-    thumbnailUrl:
-      "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800&h=600&fit=crop",
+    thumbnailUrl: getYoutubeThumbnail(
+      "https://www.youtube.com/embed/cxQr5gb6-Dg",
+    ),
     videoUrl: "https://www.youtube.com/embed/cxQr5gb6-Dg",
     description:
       "An intimate documentary exploring real stories and authentic human experiences.",
-    client: "National Geographic",
-    director: "Michael Torres",
-    year: "2023",
-    location: "Various",
-    camera: "Canon EOS C300 Mark III",
-    lenses: "Canon CN-E Primes",
-    format: "4K Cinema RAW",
-    aspectRatio: "16:9",
   },
   {
     id: 4,
-    title: "Musical Harmony",
+    title: " ",
     category: "reel",
-    thumbnailUrl:
-      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop",
+    thumbnailUrl: getYoutubeThumbnail(
+      "https://www.youtube.com/embed/osXstBGPNdQ",
+    ),
     videoUrl: "https://www.youtube.com/embed/osXstBGPNdQ",
     description:
       "A vibrant music video that blends visual artistry with rhythmic storytelling.",
-    client: "Universal Music",
-    director: "Emma Johnson",
-    year: "2024",
-    location: "Nashville, TN",
-    camera: "ARRI Alexa Mini LF",
-    lenses: "ARRI Signature Primes",
-    format: "4.5K ProRes",
-    aspectRatio: "2.35:1",
   },
   {
     id: 5,
-    title: "Tuscany Wedding Trailer | Emma & James",
+    title: "",
     category: "cinematic",
-    thumbnailUrl: "https://i.ytimg.com/vi/fjFB3B16cAo/hq720.jpg",
-    videoUrl: "https://www.youtube.com/embed/rkpzYNB6xks?si=0ukSpD6me3CYdRiY",
+    thumbnailUrl: getYoutubeThumbnail(
+      "https://www.youtube.com/embed/LlWAF6ykvsA",
+    ),
+    videoUrl: "https://www.youtube.com/embed/LlWAF6ykvsA",
     description:
       "A cinematic trailer of Emma and James’s wedding in the Tuscan hills—pure romance, festivity, and family love.",
-    client: "Emma & James",
-    director: "Willow Tree Films",
-    year: "2022",
-    location: "Tuscany, Italy",
-    camera: "Sony FX3 + DJI Ronin",
-    lenses: "Sigma 35mm, Sony 85mm",
-    format: "4K",
-    aspectRatio: "2.35:1",
   },
   {
     id: 6,
-    title: "Tuscany Wedding Trailer | Emma & James",
+    title: "",
     category: "cinematic",
-    thumbnailUrl: "https://i.ytimg.com/vi/fjFB3B16cAo/hq720.jpg",
-    videoUrl: "https://www.youtube.com/embed/rkpzYNB6xks?si=0ukSpD6me3CYdRiY",
+    thumbnailUrl: getYoutubeThumbnail(
+      "https://www.youtube.com/embed/D4VIxOWRYSQ",
+    ),
+    videoUrl: "https://www.youtube.com/embed/D4VIxOWRYSQ",
     description:
       "A cinematic trailer of Emma and James’s wedding in the Tuscan hills—pure romance, festivity, and family love.",
-    client: "Emma & James",
-    director: "Willow Tree Films",
-    year: "2022",
-    location: "Tuscany, Italy",
-    camera: "Sony FX3 + DJI Ronin",
-    lenses: "Sigma 35mm, Sony 85mm",
-    format: "4K",
-    aspectRatio: "2.35:1",
   },
   {
     id: 7,
-    title: "Tuscany Wedding Trailer | Emma & James",
+    title: "",
     category: "cinematic",
-    thumbnailUrl: "https://i.ytimg.com/vi/fjFB3B16cAo/hq720.jpg",
-    videoUrl: "https://www.youtube.com/embed/rkpzYNB6xks?si=0ukSpD6me3CYdRiY",
+    thumbnailUrl: getYoutubeThumbnail(
+      "https://www.youtube.com/embed/3S6DVBLVvaM",
+    ),
+    videoUrl: "https://www.youtube.com/embed/3S6DVBLVvaM",
     description:
       "A cinematic trailer of Emma and James’s wedding in the Tuscan hills—pure romance, festivity, and family love.",
-    client: "Emma & James",
-    director: "Willow Tree Films",
-    year: "2022",
-    location: "Tuscany, Italy",
-    camera: "Sony FX3 + DJI Ronin",
-    lenses: "Sigma 35mm, Sony 85mm",
-    format: "4K",
-    aspectRatio: "2.35:1",
   },
   {
     id: 8,
-    title: "Tuscany Wedding Trailer | Emma & James",
+    title: "",
     category: "cinematic",
-    thumbnailUrl: "https://i.ytimg.com/vi/fjFB3B16cAo/hq720.jpg",
-    videoUrl: "https://www.youtube.com/embed/rkpzYNB6xks?si=0ukSpD6me3CYdRiY",
+    thumbnailUrl: getYoutubeThumbnail(
+      "https://www.youtube.com/embed/Ckasp8D9weU",
+    ),
+    videoUrl: "https://www.youtube.com/embed/Ckasp8D9weU",
     description:
       "A cinematic trailer of Emma and James’s wedding in the Tuscan hills—pure romance, festivity, and family love.",
-    client: "Emma & James",
-    director: "Willow Tree Films",
-    year: "2022",
-    location: "Tuscany, Italy",
-    camera: "Sony FX3 + DJI Ronin",
-    lenses: "Sigma 35mm, Sony 85mm",
-    format: "4K",
-    aspectRatio: "2.35:1",
   },
   {
     id: 9,
-    title: "Tuscany Wedding Trailer | Emma & James",
+    title: "",
     category: "motion",
-    thumbnailUrl: "https://i.ytimg.com/vi/fjFB3B16cAo/hq720.jpg",
-    videoUrl: "https://www.youtube.com/embed/rkpzYNB6xks?si=0ukSpD6me3CYdRiY",
+    thumbnailUrl: getYoutubeThumbnail(
+      "https://www.youtube.com/embed/dgIOZgDDeBE",
+    ),
+    videoUrl: "https://www.youtube.com/embed/dgIOZgDDeBE",
     description:
       "A cinematic trailer of Emma and James’s wedding in the Tuscan hills—pure romance, festivity, and family love.",
-    client: "Emma & James",
-    director: "Willow Tree Films",
-    year: "2022",
-    location: "Tuscany, Italy",
-    camera: "Sony FX3 + DJI Ronin",
-    lenses: "Sigma 35mm, Sony 85mm",
-    format: "4K",
-    aspectRatio: "2.35:1",
   },
   {
     id: 10,
-    title: "Tuscany Wedding Trailer | Emma & James",
+    title: "",
     category: "motion",
-    thumbnailUrl: "https://i.ytimg.com/vi/fjFB3B16cAo/hq720.jpg",
-    videoUrl: "https://www.youtube.com/embed/rkpzYNB6xks?si=0ukSpD6me3CYdRiY",
+    thumbnailUrl: getYoutubeThumbnail(
+      "https://www.youtube.com/embed/ox635qWLTBw",
+    ),
+    videoUrl: "https://www.youtube.com/embed/ox635qWLTBw",
     description:
       "A cinematic trailer of Emma and James’s wedding in the Tuscan hills—pure romance, festivity, and family love.",
-    client: "Emma & James",
-    director: "Willow Tree Films",
-    year: "2022",
-    location: "Tuscany, Italy",
-    camera: "Sony FX3 + DJI Ronin",
-    lenses: "Sigma 35mm, Sony 85mm",
-    format: "4K",
-    aspectRatio: "2.35:1",
   },
   {
     id: 11,
-    title: "Tuscany Wedding Trailer | Emma & James",
+    title: "",
     category: "motion",
-    thumbnailUrl: "https://i.ytimg.com/vi/fjFB3B16cAo/hq720.jpg",
-    videoUrl: "https://www.youtube.com/embed/rkpzYNB6xks?si=0ukSpD6me3CYdRiY",
+    thumbnailUrl: getYoutubeThumbnail(
+      "https://www.youtube.com/embed/t90EtDovG30",
+    ),
+    videoUrl: "https://www.youtube.com/embed/t90EtDovG30",
     description:
       "A cinematic trailer of Emma and James’s wedding in the Tuscan hills—pure romance, festivity, and family love.",
-    client: "Emma & James",
-    director: "Willow Tree Films",
-    year: "2022",
-    location: "Tuscany, Italy",
-    camera: "Sony FX3 + DJI Ronin",
-    lenses: "Sigma 35mm, Sony 85mm",
-    format: "4K",
-    aspectRatio: "2.35:1",
   },
   {
     id: 12,
-    title: "Tuscany Wedding Trailer | Emma & James",
+    title: "",
     category: "motion",
-    thumbnailUrl: "https://i.ytimg.com/vi/fjFB3B16cAo/hq720.jpg",
-    videoUrl: "https://www.youtube.com/embed/rkpzYNB6xks?si=0ukSpD6me3CYdRiY",
+    thumbnailUrl: getYoutubeThumbnail(
+      "https://www.youtube.com/embed/wZdeg2rdMYo",
+    ),
+    videoUrl: "https://www.youtube.com/embed/wZdeg2rdMYo",
     description:
       "A cinematic trailer of Emma and James’s wedding in the Tuscan hills—pure romance, festivity, and family love.",
-    client: "Emma & James",
-    director: "Willow Tree Films",
-    year: "2022",
-    location: "Tuscany, Italy",
-    camera: "Sony FX3 + DJI Ronin",
-    lenses: "Sigma 35mm, Sony 85mm",
-    format: "4K",
-    aspectRatio: "2.35:1",
-  },
-  {
-    id: 12,
-    title: "Tuscany Wedding Trailer | Emma & James",
-    category: "motion",
-    thumbnailUrl: "https://i.ytimg.com/vi/fjFB3B16cAo/hq720.jpg",
-    videoUrl: "https://www.youtube.com/embed/rkpzYNB6xks?si=0ukSpD6me3CYdRiY",
-    description:
-      "A cinematic trailer of Emma and James’s wedding in the Tuscan hills—pure romance, festivity, and family love.",
-    client: "Emma & James",
-    director: "Willow Tree Films",
-    year: "2022",
-    location: "Tuscany, Italy",
-    camera: "Sony FX3 + DJI Ronin",
-    lenses: "Sigma 35mm, Sony 85mm",
-    format: "4K",
-    aspectRatio: "2.35:1",
   },
   {
     id: 13,
-    title: "Tuscany Wedding Trailer | Emma & James",
-    category: "comercial",
-    thumbnailUrl: "https://i.ytimg.com/vi/fjFB3B16cAo/hq720.jpg",
-    videoUrl: "https://www.youtube.com/embed/rkpzYNB6xks?si=0ukSpD6me3CYdRiY",
+    title: "",
+    category: "motion",
+    thumbnailUrl: getYoutubeThumbnail(
+      "https://www.youtube.com/embed/d4O3ucZVsac",
+    ),
+    videoUrl: "https://www.youtube.com/embed/d4O3ucZVsac",
     description:
       "A cinematic trailer of Emma and James’s wedding in the Tuscan hills—pure romance, festivity, and family love.",
-    client: "Emma & James",
-    director: "Willow Tree Films",
-    year: "2022",
-    location: "Tuscany, Italy",
-    camera: "Sony FX3 + DJI Ronin",
-    lenses: "Sigma 35mm, Sony 85mm",
-    format: "4K",
-    aspectRatio: "2.35:1",
   },
   {
     id: 14,
-    title: "Tuscany Wedding Trailer | Emma & James",
-    category: "comercial",
-    thumbnailUrl: "https://i.ytimg.com/vi/fjFB3B16cAo/hq720.jpg",
-    videoUrl: "https://www.youtube.com/embed/rkpzYNB6xks?si=0ukSpD6me3CYdRiY",
+    title: "",
+    category: "commercial",
+    thumbnailUrl: getYoutubeThumbnail(
+      "https://www.youtube.com/embed/P2UggxpYwVw",
+    ),
+    videoUrl: "https://www.youtube.com/embed/P2UggxpYwVw",
     description:
       "A cinematic trailer of Emma and James’s wedding in the Tuscan hills—pure romance, festivity, and family love.",
-    client: "Emma & James",
-    director: "Willow Tree Films",
-    year: "2022",
-    location: "Tuscany, Italy",
-    camera: "Sony FX3 + DJI Ronin",
-    lenses: "Sigma 35mm, Sony 85mm",
-    format: "4K",
-    aspectRatio: "2.35:1",
-  },
-  {
-    id: 15,
-    title: "Tuscany Wedding Trailer | Emma & James",
-    category: "comercial",
-    thumbnailUrl: "https://i.ytimg.com/vi/fjFB3B16cAo/hq720.jpg",
-    videoUrl: "https://www.youtube.com/embed/rkpzYNB6xks?si=0ukSpD6me3CYdRiY",
-    description:
-      "A cinematic trailer of Emma and James’s wedding in the Tuscan hills—pure romance, festivity, and family love.",
-    client: "Emma & James",
-    director: "Willow Tree Films",
-    year: "2022",
-    location: "Tuscany, Italy",
-    camera: "Sony FX3 + DJI Ronin",
-    lenses: "Sigma 35mm, Sony 85mm",
-    format: "4K",
-    aspectRatio: "2.35:1",
   },
 ];
 
@@ -380,12 +255,9 @@ const VideoGallery: React.FC = () => {
   const [imageError, setImageError] = useState<{ [key: number]: boolean }>({});
   const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(0);
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
-  const [searchTerm, setSearchTerm] = useState<string>("");
-  const [isSearchActive, setIsSearchActive] = useState<boolean>(false);
 
   const ref = useRef<HTMLDivElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
-  const searchInputRef = useRef<HTMLInputElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
   const { containerAnimation, itemAnimation } = useScrollAnimation();
 
@@ -398,12 +270,9 @@ const VideoGallery: React.FC = () => {
     return projects.filter((project) => {
       const matchesCategory =
         category === "all" || project.category === category;
-      const matchesSearch =
-        project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        project.description.toLowerCase().includes(searchTerm.toLowerCase());
-      return matchesCategory && matchesSearch;
+      return matchesCategory;
     });
-  }, [category, searchTerm]);
+  }, [category]);
 
   const openProject = useCallback(
     (project: Project) => {
@@ -475,14 +344,7 @@ const VideoGallery: React.FC = () => {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (!selectedProject) {
-        if (e.key === "/" && !isSearchActive) {
-          e.preventDefault();
-          setIsSearchActive(true);
-          setTimeout(() => searchInputRef.current?.focus(), 100);
-        }
-        return;
-      }
+      if (!selectedProject) return;
       switch (e.key) {
         case "Escape":
           closeProject();
@@ -523,32 +385,10 @@ const VideoGallery: React.FC = () => {
     closeProject,
     handleShare,
     toggleFullscreen,
-    isSearchActive,
   ]);
 
   const handleImageError = (id: number) => {
     setImageError((prev) => ({ ...prev, [id]: true }));
-  };
-
-  const toggleSearch = () => {
-    setIsSearchActive(!isSearchActive);
-    if (!isSearchActive) {
-      setTimeout(() => searchInputRef.current?.focus(), 100);
-    } else {
-      setSearchTerm("");
-    }
-  };
-
-  const searchVariants: AnimationVariants = {
-    hidden: { width: 0, opacity: 0 },
-    visible: {
-      width: "100%",
-      opacity: 1,
-      transition: {
-        stiffness: 300,
-        damping: 25,
-      },
-    },
   };
 
   const buttonHoverAnimation = {
@@ -584,7 +424,7 @@ const VideoGallery: React.FC = () => {
           >
             <motion.h2
               variants={itemAnimation}
-              className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4text-white tracking-tight"
+              className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 text-red-500 tracking-tight"
             >
               Our Popular Portfolio
             </motion.h2>
@@ -714,7 +554,6 @@ const VideoGallery: React.FC = () => {
               <button
                 onClick={() => {
                   setCategory("all");
-                  setSearchTerm("");
                 }}
                 className="mt-4 px-6 py-2 bg-white text-black rounded hover:bg-gray-200 transition-colors"
               >
@@ -836,73 +675,6 @@ const VideoGallery: React.FC = () => {
                     </>
                   )}
                 </div>
-
-                {!isFullscreen && (
-                  <motion.div
-                    className="p-6 sm:p-8 md:p-10"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                  >
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-white">
-                      {selectedProject.title}
-                    </h2>
-                    <p className="text-gray-300 text-sm uppercase tracking-widest mb-4">
-                      {selectedProject.category}
-                    </p>
-                    <p className="text-gray-200 mb-8 text-base sm:text-lg leading-relaxed">
-                      {selectedProject.description}
-                    </p>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                      <div>
-                        <h3 className="text-white font-semibold mb-4 text-lg">
-                          Project Details
-                        </h3>
-                        <ul className="text-gray-200 space-y-3">
-                          <li>
-                            <span className="font-semibold">Client:</span>{" "}
-                            {selectedProject.client}
-                          </li>
-                          <li>
-                            <span className="font-semibold">Director:</span>{" "}
-                            {selectedProject.director}
-                          </li>
-                          <li>
-                            <span className="font-semibold">Year:</span>{" "}
-                            {selectedProject.year}
-                          </li>
-                          <li>
-                            <span className="font-semibold">Location:</span>{" "}
-                            {selectedProject.location}
-                          </li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h3 className="text-white font-semibold mb-4 text-lg">
-                          Technical Specs
-                        </h3>
-                        <ul className="text-gray-200 space-y-3">
-                          <li>
-                            <span className="font-semibold">Camera:</span>{" "}
-                            {selectedProject.camera}
-                          </li>
-                          <li>
-                            <span className="font-semibold">Lenses:</span>{" "}
-                            {selectedProject.lenses}
-                          </li>
-                          <li>
-                            <span className="font-semibold">Format:</span>{" "}
-                            {selectedProject.format}
-                          </li>
-                          <li>
-                            <span className="font-semibold">Aspect Ratio:</span>{" "}
-                            {selectedProject.aspectRatio}
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
               </motion.div>
             </motion.div>
           )}
