@@ -67,7 +67,7 @@ const categories: Category[] = [
 const projects: Project[] = [
   {
     id: 1,
-    title: "Cinematic Journey",
+    title: " ",
     category: "reel",
     thumbnailUrl: getYoutubeThumbnail(
       "https://www.youtube.com/embed/PiPCXXvQamo",
@@ -78,7 +78,7 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "Brand Vision",
+    title: "",
     category: "reel",
     thumbnailUrl: getYoutubeThumbnail(
       "https://www.youtube.com/embed/EXFYrtrYXZk",
@@ -89,7 +89,7 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Documentary Truth",
+    title: " ",
     category: "reel",
     thumbnailUrl: getYoutubeThumbnail(
       "https://www.youtube.com/embed/cxQr5gb6-Dg",
@@ -100,7 +100,7 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    title: "Musical Harmony",
+    title: " ",
     category: "reel",
     thumbnailUrl: getYoutubeThumbnail(
       "https://www.youtube.com/embed/osXstBGPNdQ",
@@ -111,7 +111,7 @@ const projects: Project[] = [
   },
   {
     id: 5,
-    title: "Tuscany Wedding Trailer | Emma & James",
+    title: "",
     category: "cinematic",
     thumbnailUrl: getYoutubeThumbnail(
       "https://www.youtube.com/embed/LlWAF6ykvsA",
@@ -122,7 +122,7 @@ const projects: Project[] = [
   },
   {
     id: 6,
-    title: "Tuscany Wedding Trailer | Emma & James",
+    title: "",
     category: "cinematic",
     thumbnailUrl: getYoutubeThumbnail(
       "https://www.youtube.com/embed/D4VIxOWRYSQ",
@@ -133,7 +133,7 @@ const projects: Project[] = [
   },
   {
     id: 7,
-    title: "Tuscany Wedding Trailer | Emma & James",
+    title: "",
     category: "cinematic",
     thumbnailUrl: getYoutubeThumbnail(
       "https://www.youtube.com/embed/3S6DVBLVvaM",
@@ -144,7 +144,7 @@ const projects: Project[] = [
   },
   {
     id: 8,
-    title: "Tuscany Wedding Trailer | Emma & James",
+    title: "",
     category: "cinematic",
     thumbnailUrl: getYoutubeThumbnail(
       "https://www.youtube.com/embed/Ckasp8D9weU",
@@ -155,7 +155,7 @@ const projects: Project[] = [
   },
   {
     id: 9,
-    title: "Tuscany Wedding Trailer | Emma & James",
+    title: "",
     category: "motion",
     thumbnailUrl: getYoutubeThumbnail(
       "https://www.youtube.com/embed/dgIOZgDDeBE",
@@ -166,7 +166,7 @@ const projects: Project[] = [
   },
   {
     id: 10,
-    title: "Tuscany Wedding Trailer | Emma & James",
+    title: "",
     category: "motion",
     thumbnailUrl: getYoutubeThumbnail(
       "https://www.youtube.com/embed/ox635qWLTBw",
@@ -177,7 +177,7 @@ const projects: Project[] = [
   },
   {
     id: 11,
-    title: "Tuscany Wedding Trailer | Emma & James",
+    title: "",
     category: "motion",
     thumbnailUrl: getYoutubeThumbnail(
       "https://www.youtube.com/embed/t90EtDovG30",
@@ -188,7 +188,7 @@ const projects: Project[] = [
   },
   {
     id: 12,
-    title: "Tuscany Wedding Trailer | Emma & James",
+    title: "",
     category: "motion",
     thumbnailUrl: getYoutubeThumbnail(
       "https://www.youtube.com/embed/wZdeg2rdMYo",
@@ -199,7 +199,7 @@ const projects: Project[] = [
   },
   {
     id: 13,
-    title: "Tuscany Wedding Trailer | Emma & James",
+    title: "",
     category: "motion",
     thumbnailUrl: getYoutubeThumbnail(
       "https://www.youtube.com/embed/d4O3ucZVsac",
@@ -210,7 +210,7 @@ const projects: Project[] = [
   },
   {
     id: 14,
-    title: "Commercial Video Ad for a Real Estate Company",
+    title: "",
     category: "commercial",
     thumbnailUrl: getYoutubeThumbnail(
       "https://www.youtube.com/embed/P2UggxpYwVw",

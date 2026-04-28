@@ -26,8 +26,8 @@ interface FlipCardProps {
 }
 
 // --- FlipCard Component ---
-const IMG_WIDTH = 60; // Reduced from 100
-const IMG_HEIGHT = 85; // Reduced from 140
+const IMG_WIDTH = 100; // Increased by 20% (was 60)
+const IMG_HEIGHT = 100; // Increased by 20% (was 85)
 
 function FlipCard({ src, index, total, phase, target }: FlipCardProps) {
   return (
@@ -120,7 +120,7 @@ const IMAGES = [
   "/works/gd/16.jpg",
   "/works/gd/12.jpg",
   "/works/gd/1.jpg",
-  "/works/gd/1.jpg",
+  "/works/gd/12.jpg",
   "/works/gd/2.jpg",
 ];
 
@@ -167,7 +167,13 @@ export default function IntroAnimation() {
     if (!container) return;
 
     const handleWheel = (e: WheelEvent) => {
-      // Prevent default to stop browser overscroll/bounce
+      // Only prevent default if we haven't reached the max scroll
+      // This allows normal page scrolling once animation completes
+      if (scrollRef.current >= MAX_SCROLL && e.deltaY > 0) {
+        // Allow browser default scrolling
+        return;
+      }
+
       e.preventDefault();
 
       const newScroll = Math.min(
@@ -187,6 +193,13 @@ export default function IntroAnimation() {
       const touchY = e.touches[0].clientY;
       const deltaY = touchStartY - touchY;
       touchStartY = touchY;
+
+      // Only prevent default if we haven't reached the max scroll
+      if (scrollRef.current >= MAX_SCROLL && deltaY > 0) {
+        return;
+      }
+
+      e.preventDefault();
 
       const newScroll = Math.min(
         Math.max(scrollRef.current + deltaY, 0),
@@ -334,11 +347,7 @@ export default function IntroAnimation() {
             Explore Our Vision
           </h2>
           <p className="text-sm md:text-base text-gray-600 max-w-lg leading-relaxed">
-            Professional graphic design services that elevate your brand with
-            creative visuals.We deliver impactful designs{" "}
-            <br className="hidden md:block" />
-            that enhance engagement, strengthen identity, and communicate your
-            message clearly across all platforms.
+            A Creative Partner for 100+ Successful Brands
           </p>
         </motion.div>
 
@@ -351,7 +360,7 @@ export default function IntroAnimation() {
             if (introPhase === "scatter") {
               target = scatterPositions[i];
             } else if (introPhase === "line") {
-              const lineSpacing = 70; // Adjusted for smaller images (60px width + 10px gap)
+              const lineSpacing = 120; // 100px width + 21px gap (increased by 10%)
               const lineTotalWidth = TOTAL_IMAGES * lineSpacing;
               const lineX = i * lineSpacing - lineTotalWidth / 2;
               target = { x: lineX, y: 0, rotation: 0, scale: 1, opacity: 1 };
