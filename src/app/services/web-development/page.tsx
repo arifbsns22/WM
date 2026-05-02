@@ -4,6 +4,7 @@ import ServiceListCards from "@/components/common components/services-list/servi
 import BentoGrid1 from "@/components/web-development/bentogrid";
 
 import WebHero from "@/components/web-development/hero";
+import StepsAnimated from "@/components/web-development/steps-animated";
 import TabsDemo from "@/components/web-development/tabs1";
 
 const WebDevelopmentPage = () => {
@@ -12,6 +13,7 @@ const WebDevelopmentPage = () => {
       <WebHero />
       <TabsDemo/>
       <BentoGrid1 />
+      <StepsAnimated/>
       <ServiceListCards />
       <Faq />
       <CTA />

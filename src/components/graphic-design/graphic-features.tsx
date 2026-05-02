@@ -1,142 +1,129 @@
-import {
-  Building2,
-  Lightbulb,
-  ScreenShare,
-  Trophy,
-  User,
-  User2,
-  LucideIcon,
-} from "lucide-react";
+"use client";
+
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-// Define the feature item type
 type FeatureItem = {
-  icon: LucideIcon;
+  image: string;
   title: string;
   description: string;
   position?: "left" | "right";
   cornerStyle?: string;
 };
-
-// Create feature data arrays for left and right columns
 const leftFeatures: FeatureItem[] = [
   {
-    icon: Building2,
-    title: "Taught by Professionals",
+    image: "/logos/branding.png",
+    title: "Logo & Branding",
     description:
-      "Learn directly from top engineers and founders with real-world experience.",
-    position: "left",
+      "Crafting memorable and timeless brand identities that represent your business",
     cornerStyle: "sm:translate-x-4 sm:rounded-br-[2px]",
   },
   {
-    icon: User2,
-    title: "Coding Hostels",
+    image: "/logos/publicity.png",
+    title: "Social Media Graphics",
     description:
-      "Join virtual hostels to study, collaborate, and vibe with fellow learners.",
-    position: "left",
+      "Engaging visuals designed to boost interaction and strengthen your online presence",
     cornerStyle: "sm:-translate-x-4 sm:rounded-br-[2px]",
   },
   {
-    icon: Trophy,
-    title: "Bounties",
+    image: "/logos/brochure.png",
+    title: "Marketing Materials",
     description:
-      "Win rewards for solving challenges, contributing to projects, and helping peers.",
-    position: "left",
+      "Brochures, posters, and business cards that tell your brand story with style.",
     cornerStyle: "sm:translate-x-4 sm:rounded-tr-[2px]",
   },
 ];
 
 const rightFeatures: FeatureItem[] = [
   {
-    icon: ScreenShare,
-    title: "Revision Classes",
+    image: "/logos/printing-machine.png",
+    title: "Digital & Print Design",
     description:
-      "Stay sharp with weekly revision sessions and topic refreshers.",
-    position: "right",
+      "Consistent, high-quality designs ready for both online and offline campaigns.",
     cornerStyle: "sm:-translate-x-4 sm:rounded-bl-[2px]",
   },
   {
-    icon: User,
-    title: "Peer Code Reviews",
+    image: "/logos/photography.png",
+    title: "Product Photography",
     description:
-      "Improve faster with feedback from mentors and batchmates on your actual code.",
-    position: "right",
+      "Professional product photography that showcases your items with clarity, style, and precision.",
     cornerStyle: "sm:translate-x-4 sm:rounded-bl-[2px]",
   },
   {
-    icon: Lightbulb,
-    title: "Leet Lab",
+    image: "/logos/package.png",
+    title: "Packaging Design",
     description:
-      "Ace coding interviews with daily DSA problems, contests, and tracking.",
-    position: "right",
+      "Creative and functional packaging design that elevates your brand and attracts customers",
     cornerStyle: "sm:-translate-x-4 sm:rounded-tl-[2px]",
   },
 ];
 
-// Feature card component
 const FeatureCard = ({ feature }: { feature: FeatureItem }) => {
-  const Icon = feature.icon;
-
   return (
-    <div>
-      <div
-        className={cn(
-          "relative rounded-2xl px-4 pt-4 pb-4 text-sm",
-          "bg-secondary/50 ring-border ring",
-          feature.cornerStyle,
-        )}
-      >
-        <div className="text-primary mb-3 text-[2rem]">
-          <Icon />
-        </div>
-        <h2 className="text-foreground mb-2.5 text-2xl">{feature.title}</h2>
-        <p className="text-muted-foreground text-base text-pretty">
-          {feature.description}
-        </p>
-        {/* Decorative elements */}
-        <span className="from-primary/0 via-primary to-primary/0 absolute -bottom-px left-1/2 h-px w-1/2 -translate-x-1/2 bg-gradient-to-r opacity-60"></span>
-        <span className="absolute inset-0 bg-[radial-gradient(30%_5%_at_50%_100%,hsl(var(--primary)/0.15)_0%,transparent_100%)] opacity-60"></span>
+    <div
+      className={cn(
+        "relative rounded-2xl px-4 pt-5 pb-4 text-sm",
+        "bg-secondary/50 ring-border ring transition duration-300 hover:shadow-lg",
+        feature.cornerStyle
+      )}
+    >
+      <div className="mb-4 bg-primary/10 p-3 rounded-xl w-fit">
+        <Image
+          src={feature.image}
+          alt={feature.title}
+          width={40}
+          height={40}
+          className="object-contain"
+        />
       </div>
+      <h2 className="text-foreground mb-2.5 text-2xl font-semibold">
+        {feature.title}
+      </h2>
+
+      
+      <p className="text-muted-foreground text-base text-pretty">
+        {feature.description}
+      </p>
+
+    
+      <span className="from-primary/0 via-primary to-primary/0 absolute -bottom-px left-1/2 h-px w-1/2 -translate-x-1/2 bg-gradient-to-r opacity-60"></span>
+      <span className="absolute inset-0 bg-[radial-gradient(30%_5%_at_50%_100%,hsl(var(--primary)/0.15)_0%,transparent_100%)] opacity-60"></span>
     </div>
   );
 };
 
 export default function GraphicFeature() {
   return (
-    <section className="pt-20 pb-8" id="features">
-      <div className="mx-6 max-w-[1120px] pt-2 pb-16 max-[300px]:mx-4 min-[1150px]:mx-auto">
+    <section className="pt-20 pb-10" id="features">
+      <div className="mx-6 max-w-[1120px] pt-2 pb-16 min-[1150px]:mx-auto">
         <div className="flex flex-col-reverse gap-6 md:grid md:grid-cols-3">
-          {/* Left column */}
+
           <div className="flex flex-col gap-6">
             {leftFeatures.map((feature, index) => (
-              <FeatureCard key={`left-feature-${index}`} feature={feature} />
+              <FeatureCard key={index} feature={feature} />
             ))}
           </div>
 
-          {/* Center column */}
-          <div className="order-[1] mb-6 self-center sm:order-[0] md:mb-0">
-            <div className="bg-secondary text-foreground ring-border relative mx-auto mb-4.5 w-fit rounded-full rounded-bl-[2px] px-4 py-2 text-sm ring">
-              <span className="relative z-1 flex items-center gap-2">
-                Features
-              </span>
-              <span className="from-primary/0 via-primary to-primary/0 absolute -bottom-px left-1/2 h-px w-2/5 -translate-x-1/2 bg-gradient-to-r"></span>
-              <span className="absolute inset-0 bg-[radial-gradient(30%_40%_at_50%_100%,hsl(var(--primary)/0.25)_0%,transparent_100%)]"></span>
+          <div className="order-[1] mb-6 self-center text-center sm:order-[0] md:mb-0">
+            <div className="bg-secondary ring-border relative mx-auto mb-4 w-fit rounded-full px-4 py-2 text-sm ring">
+              Features
             </div>
-            <h2 className="text-foreground mb-2 text-center text-2xl sm:mb-2.5 md:text-[2rem]">
-              Key Benefits of Cohorts
+
+            <h2 className="text-foreground mb-3 text-2xl md:text-[2rem] font-semibold">
+              All the services you need, available on our platform
             </h2>
-            <p className="text-muted-foreground mx-auto max-w-[18rem] text-center text-pretty">
-              Cohorts are best way to learn because you finish the course in a
-              timely manner
+
+            <p className="text-muted-foreground mx-auto max-w-[18rem]">
+           simplifies every step of your graphic design workflow with complete tools for planning, managing, and delivering creative projects.
             </p>
           </div>
 
-          {/* Right column */}
           <div className="flex flex-col gap-6">
             {rightFeatures.map((feature, index) => (
-              <FeatureCard key={`right-feature-${index}`} feature={feature} />
+              <FeatureCard key={index} feature={feature} />
             ))}
           </div>
+
         </div>
       </div>
     </section>

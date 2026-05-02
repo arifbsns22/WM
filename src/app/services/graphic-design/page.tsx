@@ -1,9 +1,11 @@
 import CTA from "@/components/common components/cta/cta";
 import Faq from "@/components/common components/faq/faq";
 import ServiceListCards from "@/components/common components/services-list/service-cards";
+import BrandingService from "@/components/graphic-design/barnding-service";
 import GraphicFeature from "@/components/graphic-design/graphic-features";
 import IntroAnimation from "@/components/graphic-design/hero";
 import ImageCarousel from "@/components/graphic-design/slider";
+import Team from "@/components/graphic-design/team";
 
 const GraphicDesignPage = () => {
   return (
@@ -18,6 +20,8 @@ const GraphicDesignPage = () => {
       </div>
       <div className="items-center justify-center ">
         <ImageCarousel />
+        <Team/>
+        <BrandingService/>
         <ServiceListCards />
         <Faq />
         <CTA />

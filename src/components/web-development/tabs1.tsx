@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function TabsDemo() {
   return (
     <Tabs
-      defaultValue="overview"
+      defaultValue="all"
       className="mx-auto border rounded-md overflow-hidden w-400 mt-20"
     >
       <TabsList className="border-b w-full gap-1 rounded-b-none">
