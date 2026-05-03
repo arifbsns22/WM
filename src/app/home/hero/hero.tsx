@@ -20,6 +20,9 @@ type HeroSectionProps = {
 };
 
 function HeroSection({ avatarList }: HeroSectionProps) {
+  const phoneNumber = "8801681583033"; 
+  const whatsappUrl = `https://wa.me/${phoneNumber}`;
+
   return (
     <section>
       <div className="w-full h-full relative">
@@ -50,30 +53,38 @@ function HeroSection({ avatarList }: HeroSectionProps) {
                   services
                 </motion.p>
               </div>
+
               <motion.div
                 initial={{ opacity: 0, y: 32 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.2, ease: "easeInOut" }}
                 className="flex items-center flex-col md:flex-row justify-center gap-8"
               >
-                <Button className="relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer">
-                  <span className="relative z-10 transition-all duration-500">
-                    Let's Talk
-                  </span>
-                  <span className="absolute right-1 w-10 h-10 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
-                    <ArrowUpRight size={16} />
-                  </span>
+                {/* WhatsApp Link Button */}
+                <Button 
+                  asChild
+                  className="relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer"
+                >
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                    <span className="relative z-10 transition-all duration-500">
+                      Let's Talk
+                    </span>
+                    <span className="absolute right-1 w-10 h-10 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
+                      <ArrowUpRight size={16} />
+                    </span>
+                  </a>
                 </Button>
+
                 <div className="flex items-center sm:gap-7 gap-3">
                   <ul className="avatar flex flex-row items-center">
                     {avatarList.map((avatar, index) => (
-                      <li key={index} className="-mr-2 z-1 avatar-hover:ml-2">
+                      <li key={index} className="-mr-2 z-1">
                         <img
                           src={avatar.image}
                           alt="Avatar"
                           width={40}
                           height={40}
-                          className="rounded-full border-2 border-white"
+                          className="rounded-full border-2 border-white object-cover"
                         />
                       </li>
                     ))}
@@ -81,12 +92,13 @@ function HeroSection({ avatarList }: HeroSectionProps) {
                   <div className="gap-1 flex flex-col items-start">
                     <div className="flex gap-1">
                       {Array.from({ length: 5 }).map((_, index) => (
-                        <img
-                          key={index}
-                          src="https://images.shadcnspace.com/assets/svgs/icon-star.svg"
-                          alt="star"
-                          className="h-4 w-4"
-                        />
+                        <svg 
+                          key={index} 
+                          className="h-4 w-4 fill-yellow-400 text-yellow-400" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
                       ))}
                     </div>
                     <p className="sm:text-sm text-xs font-normal text-muted-foreground">
