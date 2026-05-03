@@ -14,7 +14,6 @@ const HomePage = () => {
       <AboutAndStats01 />
       <Services />
       <Bentogrid />
-      <Team />
       <Testimonials />
       <Faq />
       <CTA />

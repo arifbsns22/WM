@@ -7,7 +7,6 @@ const AboutUsPage = () => {
   return (
     <>
       <AboutUs />
-      <Team />
       <Testimonials />
       <CTA />
     </>
