@@ -81,31 +81,11 @@ const ContactInfo = () => {
       <div className="flex flex-col gap-1 animate-in fade-in slide-in-from-left-10 duration-1000 delay-100 ease-in-out fill-mode-both">
         <p className="text-sm font-normal text-muted-foreground">Location</p>
         <p className="text-base font-medium text-primary">
-          Ferdous Tower, 5th Floor, Mymensin Sadar, Mymensingh-2200, Bangladesh
+          Ferdous Tower, 5th Floor, Mymensingh Sadar, Mymensingh-2200,
+          Bangladesh
         </p>
       </div>
       <Separator orientation="horizontal" />
-      <div className="flex flex-col gap-6 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-100 ease-in-out fill-mode-both">
-        <p className="text-base font-normal text-muted-foreground ">
-          Trusted by
-        </p>
-        <Marquee pauseOnHover className="[--duration:20s] p-0">
-          {brandList.map((brand, index) => (
-            <div key={index}>
-              <img
-                src={brand.image}
-                alt={brand.name}
-                className="w-36 h-8 mr-6 lg:mr-20 dark:hidden"
-              />
-              <img
-                src={brand.lightimg}
-                alt={brand.name}
-                className="hidden dark:block w-36 h-8 mr-12 lg:mr-20"
-              />
-            </div>
-          ))}
-        </Marquee>
-      </div>
     </div>
   );
 };

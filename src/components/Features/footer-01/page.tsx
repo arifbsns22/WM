@@ -1,4 +1,4 @@
-import Footer from "@/components/shadcn-space/blocks/footer-01/footer";
+import Footer from "@/components/common components/footer/footer";
 
 const FooterPage = () => {
   return <Footer />;

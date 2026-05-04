@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import { Mail, Phone, MapPin, Globe } from "lucide-react";
-import { FooterBackgroundGradient, TextHoverEffect } from "../footer-02/footer";
+import { Mail, Phone, MapPin, Globe, MailIcon } from "lucide-react";
+import { FooterBackgroundGradient, TextHoverEffect } from "./hover-footer";
 import {
   SiDribbble,
   SiFacebook,
@@ -16,22 +16,19 @@ function HoverFooter() {
     {
       title: "About Us",
       links: [
-        { label: "Company History", href: "#" },
-        { label: "Meet the Team", href: "#" },
-        { label: "Employee Handbook", href: "#" },
-        { label: "Careers", href: "#" },
+        { label: "Home", href: "/" },
+        { label: "Contact Us", href: "#" },
+        { label: "Our Works", href: "#" },
+        { label: "About Us", href: "#" },
       ],
     },
     {
       title: "Helpful Links",
       links: [
-        { label: "FAQs", href: "#" },
-        { label: "Support", href: "#" },
-        {
-          label: "Live Chat",
-          href: "#",
-          pulse: true,
-        },
+        { label: "All Services", href: "#" },
+        { label: "Web Development", href: "#" },
+        { label: "Graphic Design", href: "#" },
+        { label: "Video Editing", href: "#" },
       ],
     },
   ];
@@ -39,32 +36,29 @@ function HoverFooter() {
   // Contact info data
   const contactInfo = [
     {
-      icon: <Mail size={18} className="text-[#3ca2fa]" />,
-      text: "hello@nurui.com",
-      href: "mailto:hello@nurui.com",
+      icon: <MailIcon size={18} className="text-[#3ca2fa]" />,
+      text: "watermelondigitalnz@gmail.com",
+      href: "mailto:watermelondigitalnz@gmail.com",
     },
     {
       icon: <Phone size={18} className="text-[#3ca2fa]" />,
-      text: "+91 86373 73116",
-      href: "tel:+918637373116",
+      text: "+8801750150752",
+      href: "tel:+8801750150752",
     },
     {
       icon: <MapPin size={18} className="text-[#3ca2fa]" />,
-      text: "Sylhet, Bangladesh",
+      text: "Mymensingh Sadar",
     },
   ];
 
   // Social media icons
   const socialLinks = [
-    { icon: <SiFacebook size={20} />, label: "Facebook", href: "#" },
-    { icon: <SiInstagram size={20} />, label: "Instagram", href: "#" },
     {
-      icon: <SiTaketwointeractivesoftware size={20} />,
-      label: "Twitter",
-      href: "#",
+      icon: <SiFacebook size={20} />,
+      label: "Facebook",
+      href: "https://www.facebook.com/WatermelonDigitalMarketingAgency/",
     },
-    { icon: <SiDribbble size={20} />, label: "Dribbble", href: "#" },
-    { icon: <IconGlobe size={20} />, label: "Globe", href: "#" },
+    ,
   ];
 
   return (
@@ -74,13 +68,12 @@ function HoverFooter() {
           {/* Brand section */}
           <div className="flex flex-col space-y-4">
             <div className="flex items-center space-x-2">
-              <span className="text-[#3ca2fa] text-3xl font-extrabold">
-                &hearts;
+              <span className="text-white text-2xl font-bold">
+                Watermelon Digital
               </span>
-              <span className="text-white text-3xl font-bold">Nur/ui</span>
             </div>
             <p className="text-sm leading-relaxed">
-              Nur UI is a modern React and Next.js based UI component library.
+              Seed To Success-Grow Business
             </p>
           </div>
 
@@ -106,14 +99,13 @@ function HoverFooter() {
           ))}
 
           {/* Contact section */}
-          <div>
+          <div className="flex flex-col w-full">
             <h4 className="text-white text-lg font-semibold mb-6">
               Contact Us
             </h4>
             <ul className="space-y-4">
               {contactInfo.map((item, i) => (
                 <li key={i} className="flex items-center space-x-3">
-                  {item.icon}
                   {item.href ? (
                     <a
                       href={item.href}
@@ -143,7 +135,7 @@ function HoverFooter() {
                 key={label}
                 href={href}
                 aria-label={label}
-                className="hover:text-[#3ca2fa] transition-colors"
+                className="hover:text-[#fa883c] transition-colors"
               >
                 {icon}
               </a>
@@ -159,10 +151,9 @@ function HoverFooter() {
       </div>
 
       {/* Text hover effect */}
-      <div className="lg:flex hidden h-[30rem] -mt-52 -mb-36">
+      <div className="lg:flex hidden h-[30rem] -mt-30 -mb-36">
         <TextHoverEffect text="Watermelon" className="z-50" />
       </div>
-
       <FooterBackgroundGradient />
     </footer>
   );

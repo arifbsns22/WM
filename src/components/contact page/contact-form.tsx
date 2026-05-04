@@ -1,175 +1,75 @@
-"use client";
-
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  Map,
+  MapMarker,
+  MarkerContent,
+  MarkerLabel,
+  MarkerPopup,
+} from "@/components/contact page/map";
+import { Button } from "@/components/ui/button";
+import { Star, Navigation, Clock, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
-interface ContactFormData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  country: string;
-  message: string;
-  terms: boolean;
-}
+const places = [
+  {
+    id: 1,
+    name: "Watermelon Digital",
+    label: "Watermelon Digital",
+    category: "Head Office",
+    rating: 4.8,
+    reviews: 12453,
+    hours: "10:00 AM - 7:00 PM",
+    image: "/works/office.jpg",
+    lng: 90.400977,
+    lat: 24.759863,
+  },
+];
 
-const ContactForm = () => {
-  const [formData, setFormData] = useState<ContactFormData>({
-    firstName: "",
-    lastName: "",
-    email: "",
-    country: "",
-    message: "",
-    terms: false,
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleCheckboxChange = (checked: boolean) => {
-    setFormData((prev) => ({ ...prev, terms: checked }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-  };
-
+export default function PopupExample() {
   return (
-    <div className="w-full">
-      <Card className="ring-0 p-8 gap-6 md:gap-8 border rounded-2xl animate-in fade-in slide-in-from-right-10 duration-1000 delay-100 ease-in-out fill-mode-both">
-        <CardHeader className="p-0">
-          <CardTitle className="text-2xl font-semibold text-primary">
-            Start the project
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="p-0">
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div className="flex flex-col gap-8">
-              <div className="flex flex-col gap-6">
-                {/* form inputs */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-4">
-                  <div>
-                    <Input
-                      id="firstName"
-                      name="firstName"
-                      placeholder="First name"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      className="dark:bg-background h-9 shadow-xs"
-                      required
-                    />
+    <div className="h-[400px] w-full border rounded-md overflow-hidden">
+      <Map center={[90.400977, 24.759863]} zoom={16}>
+        {places.map((place) => (
+          <MapMarker key={place.id} longitude={place.lng} latitude={place.lat}>
+            <MarkerContent>
+              <div className="size-5 rounded-full bg-rose-500 border-2 border-white shadow-lg cursor-pointer hover:scale-110 transition-transform" />
+              <MarkerLabel position="bottom">{place.label}</MarkerLabel>
+            </MarkerContent>
+            <MarkerPopup className="p-0 w-62">
+              <div className="relative h-32 overflow-hidden rounded-t-md">
+                <Image
+                  src={place.image}
+                  alt={place.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="space-y-2 p-3">
+                <div>
+                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                    {place.category}
+                  </span>
+                  <h3 className="font-semibold text-foreground leading-tight">
+                    {place.name}
+                  </h3>
+                </div>
+                <div className="flex items-center gap-3 text-sm">
+                  <div className="flex items-center gap-1">
+                    <Star className="size-3.5 fill-amber-400 text-amber-400" />
+                    <span className="font-medium">{place.rating}</span>
+                    <span className="text-muted-foreground">
+                      ({place.reviews.toLocaleString()})
+                    </span>
                   </div>
-                  <div>
-                    <Input
-                      id="lastName"
-                      name="lastName"
-                      placeholder="Last name"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      className="dark:bg-background h-9 shadow-xs"
-                      required
-                    />
-                  </div>
                 </div>
-
-                <div>
-                  <Input
-                    id="email"
-                    name="email"
-                    placeholder="youremail@website.com"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="dark:bg-background h-9 shadow-xs"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <Select
-                    value={formData.country}
-                    onValueChange={(value) =>
-                      setFormData((prev) => ({ ...prev, country: value ?? "" }))
-                    }
-                  >
-                    <SelectTrigger
-                      id="country"
-                      className="w-full h-9! dark:bg-background shadow-xs"
-                    >
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="United States">
-                        United States
-                      </SelectItem>
-                      <SelectItem value="United Kingdom">
-                        United Kingdom
-                      </SelectItem>
-                      <SelectItem value="Canada">Canada</SelectItem>
-                      <SelectItem value="Australia">Australia</SelectItem>
-                      <SelectItem value="Germany">Germany</SelectItem>
-                      <SelectItem value="France">France</SelectItem>
-                      <SelectItem value="India">India</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    placeholder="Let us know about your project"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="h-20 resize-none dark:bg-background shadow-xs"
-                    required
-                  />
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <Checkbox
-                    id="terms"
-                    checked={formData.terms}
-                    onCheckedChange={handleCheckboxChange}
-                    required
-                  />
-                  <Label
-                    htmlFor="terms"
-                    className="text-sm font-normal text-primary select-none"
-                  >
-                    I have read and acknowledge the Terms and Conditions
-                  </Label>
+                <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                  <Clock className="size-3.5" />
+                  <span>{place.hours}</span>
                 </div>
               </div>
-              {/* submit button */}
-              <Button
-                type="submit"
-                size="lg"
-                className="rounded-xl bg-blue-500 hover:bg-blue-500/80 text-white hover:cursor-pointer h-10"
-              >
-                Submit Inquiry
-              </Button>
-            </div>
-          </form>
-        </CardContent>
-      </Card>
+            </MarkerPopup>
+          </MapMarker>
+        ))}
+      </Map>
     </div>
   );
-};
-
-export default ContactForm;
+}

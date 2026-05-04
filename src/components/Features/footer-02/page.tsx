@@ -1,5 +1,5 @@
-import Footer from "@/components/shadcn-space/blocks/footer-02/footer";
+import Footer from "@/components/common components/footer/hover-footer";
 
 export default function Page() {
-    return <Footer />
+  return <Footer />;
 }

@@ -6,7 +6,7 @@ import FloatingNavBar from "@/components/floating-dock-demo";
 import { ThemeProvider } from "@/components/theme-provider";
 
 import { Header } from "@/components/common components/navigation-menu/header-menu";
-import HoverFooter from "@/components/shadcn-space/blocks/footer-01/footer";
+import HoverFooter from "@/components/common components/footer/footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
