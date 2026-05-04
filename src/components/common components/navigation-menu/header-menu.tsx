@@ -97,7 +97,7 @@ export function Header() {
                     <p className="text-muted-foreground text-sm">
                       Interested?{" "}
                       <a
-                        href="#"
+                        href="https://api.whatsapp.com/send/?phone=8801681583033&text&type=phone_number&app_absent=0"
                         className="text-foreground font-medium hover:underline"
                       >
                         Schedule a meeting
@@ -106,7 +106,7 @@ export function Header() {
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-              <NavigationMenuItem>
+              {/* <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent text-1xl font-medium">
                   Company
                 </NavigationMenuTrigger>
@@ -134,7 +134,7 @@ export function Header() {
                     </ul>
                   </div>
                 </NavigationMenuContent>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
               <a
                 href="/about"
                 className="px-4 text-1xl font-medium hover:bg-accent rounded-md p-2"
@@ -153,9 +153,13 @@ export function Header() {
         <div className="hidden items-center gap-2 md:flex">
           <ThemeSwitch />
 
-          <Button onClick={()=>{
-            window.open("https://wa.me/+8801681583033", "_blank")
-          }}>Let's Talk</Button>
+          <Button
+            onClick={() => {
+              window.open("https://wa.me/+8801681583033", "_blank");
+            }}
+          >
+            Let's Talk
+          </Button>
         </div>
         <Button
           size="icon"
