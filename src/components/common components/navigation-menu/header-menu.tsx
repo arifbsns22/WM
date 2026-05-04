@@ -153,7 +153,9 @@ export function Header() {
         <div className="hidden items-center gap-2 md:flex">
           <ThemeSwitch />
 
-          <Button>Let's Talk</Button>
+          <Button onClick={()=>{
+            window.open("https://wa.me/+8801681583033", "_blank")
+          }}>Let's Talk</Button>
         </div>
         <Button
           size="icon"
@@ -289,13 +291,6 @@ const servicesLinks: LinkItem[] = [
     href: "/services/marketing",
     description: "Boost your online presence and drive growth",
     icon: MegaphoneIcon,
-  },
-
-  {
-    title: "3D Design",
-    href: "/services/3d-design",
-    description: "Create immersive 3D experiences",
-    icon: PlugIcon,
   },
 ];
 

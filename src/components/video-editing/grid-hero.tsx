@@ -56,12 +56,14 @@ export function VideoHeroSection() {
       </motion.p>
 
       <motion.div variants={itemVariants} className="flex gap-4">
-        <Button size="lg" className="gap-2">
-          Try Watermelon Now
+        <Button onClick={() =>{
+                  window.open("https://wa.me/8801681583033", "_blank")
+                }} size="lg" className="gap-2">
+          Let's Talk
           <ArrowRight className="h-4 w-4" />
         </Button>
         <Button size="lg" variant="outline">
-          Let's Connect
+         <a href="/contact">Contact Us</a>
         </Button>
       </motion.div>
 

@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon, PhoneCallIcon } from "lucide-react";
@@ -52,11 +53,13 @@ export function MarketingHeroSection() {
         </p>
 
         <div className="fade-in slide-in-from-bottom-10 flex w-fit animate-in items-center justify-center gap-3 fill-mode-backwards pt-2 delay-300 duration-500 ease-out">
-          <Button variant="outline">
-            About Us
+          <Button variant="outline" onClick={()=> {
+            window.open("https://wa.me/8801681583033", "_blank")
+          }}>
+            Let's Talk
           </Button>
           <Button>
-            Let's discourse
+            <a href="/contact">Contact Us</a>
             <ArrowRightIcon className="size-4 ml-2" data-icon="inline-end" />
           </Button>
         </div>

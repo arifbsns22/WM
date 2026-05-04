@@ -39,7 +39,9 @@ const CTA = ({ className }: CTAProps) => {
                   in every interaction.
                 </p>
               </div>
-              <Button className="relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden hover:bg-primary/80 cursor-pointer">
+              <Button onClick={() =>{
+                  window.open("https://wa.me/8801681583033", "_blank")
+                }} className="relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden hover:bg-primary/80 cursor-pointer">
                 <span className="relative z-10 transition-all duration-500">
                   Let's craft together
                 </span>

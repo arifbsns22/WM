@@ -101,12 +101,6 @@ const Testimonials = () => {
                       brand completely!
                     </p>
                   </div>
-                  <img
-                    src="works/gabfit.jpg"
-                    alt="background-img"
-                    width={"100%"}
-                    height={220}
-                  />
                 </CardContent>
               </Card>
             </motion.div>

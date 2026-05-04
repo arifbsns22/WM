@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { Button } from '../ui/button'
+import { Check } from 'lucide-react'
 
 const BrandingService = () => {
   return (
@@ -16,7 +17,13 @@ const BrandingService = () => {
           services from us We also have an extemsive network, with thousands of
           trusted partners and thousands of weekly active users
         </p>
-        <Button className='text-base font-bold mt-5'>Knock Us</Button>
+        <ul className="mt-5 text-lg">
+            <li className="flex items-center gap-2"><Check /> Experienced team with proven expertise</li>
+            <li className="flex items-center gap-2"><Check /> On-time delivery with consistent quality</li>
+            <li className="flex items-center gap-2"><Check /> Transparent and clear communication</li>
+            <li className="flex items-center gap-2"><Check /> Client-focused, tailored solutions</li>
+            <li className="flex items-center gap-2"><Check /> Reliable support you can depend on</li>
+        </ul>
       </div>
     </div>
   )

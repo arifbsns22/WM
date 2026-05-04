@@ -1,97 +1,142 @@
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Separator } from "@/components/ui/separator"
+"use client";
+import React, { useRef, useEffect, useState } from "react";
+import { motion } from "motion/react";
+import { cn } from "@/lib/utils";
 
-export default function Footer() {
-    const footerLinks = [
-        { label: "Home", href: "#" },
-        { label: "Categories", href: "#" },
-        { label: "Properties", href: "#" },
-        { label: "Featured property", href: "#" },
-        { label: "Testimonials", href: "#" },
-        { label: "Blog", href: "#" },
-        { label: "FAQs", href: "#" },
-        { label: "404 page", href: "#" },
-    ]
-    return (
-        <footer className="dark bg-background">
-            <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 md:py-24 py-8">
-                <div className="flex flex-col gap-16">
-                    <div className="flex flex-col gap-12">
-                        <div className='grid grid-cols-12 gap-6 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-100 ease-in-out fill-mode-both'>
-                            <div className="col-span-12 md:col-span-3">
-                                <p className='w-full text-foreground'>
-                                    Stay updated with the latest news, promotions, and exclusive offers.
-                                </p>
-                            </div>
-                            <div className="md:col-span-1" />
-                            <div className="col-span-12 md:col-span-8">
-                                <div className='flex flex-col lg:flex-row gap-5 lg:gap-10'>
-                                    <form className='flex gap-2 flex-1'>
-                                        <Input
-                                            required
-                                            type="email"
-                                            name="email"
-                                            placeholder="enter your email"
-                                            className="rounded-full h-full py-2 text-white"
-                                        />
-                                        <Button type='submit' className='h-auto py-2 px-4 rounded-full cursor-pointer font-medium hover:bg-primary/80'>
-                                            Subscribe
-                                        </Button>
-                                    </form>
-                                    <p className='text-sm flex-1 text-foreground'>
-                                        By subscribing, you agree to receive our promotional emails. You can unsubscribe at any time.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <Separator />
-                    </div>
-                    <div className="grid grid-cols-12 gap-6">
-                        <div className="col-span-12 md:col-span-7 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-100 ease-in-out fill-mode-both">
-                            <h2 className="sm:text-5xl text-3xl font-medium mb-6 text-foreground">
-                                Begin your path to success contact us today.
-                            </h2>
-                            <Button className="py-3.5 px-6 rounded-full bg-teal-400 hover:bg-teal-400/80 h-auto">
-                                Get in touch
-                            </Button>
-                        </div>
-                        <div className="md:col-span-1" />
-                        <div className="col-span-12 md:col-span-2 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-100 ease-in-out fill-mode-both">
-                            <div className="flex flex-col gap-4">
-                                {footerLinks.slice(0, 4).map((link) => (
-                                    <a
-                                        key={link.label}
-                                        href={link.href}
-                                        className="block text-base text-muted-foreground hover:text-primary"
-                                    >
-                                        {link.label}
-                                    </a>
-                                ))}
-                            </div>
-                        </div>
-                        <div className="col-span-12 md:col-span-2 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-200 ease-in-out fill-mode-both">
-                            <div className="flex flex-col gap-4">
-                                {footerLinks.slice(4, 8).map((link) => (
-                                    <a
-                                        key={link.label}
-                                        href={link.href}
-                                        className="block text-base text-muted-foreground hover:text-primary"
-                                    >
-                                        {link.label}
-                                    </a>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="flex flex-col gap-12">
-                        <Separator />
-                        <p className="text-sm text-muted-foreground animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-300 ease-in-out fill-mode-both">
-                            ©2026 Shadcn Space. All Rights Reserved
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    )
-}
+export const TextHoverEffect = ({
+  text,
+  duration,
+  className,
+}: {
+  text: string;
+  duration?: number;
+  automatic?: boolean;
+  className?: string;
+}) => {
+  const svgRef = useRef<SVGSVGElement>(null);
+  const [cursor, setCursor] = useState({ x: 0, y: 0 });
+  const [hovered, setHovered] = useState(false);
+  const [maskPosition, setMaskPosition] = useState({ cx: "50%", cy: "50%" });
+
+  useEffect(() => {
+    if (svgRef.current && cursor.x !== null && cursor.y !== null) {
+      const svgRect = svgRef.current.getBoundingClientRect();
+      const cxPercentage = ((cursor.x - svgRect.left) / svgRect.width) * 100;
+      const cyPercentage = ((cursor.y - svgRect.top) / svgRect.height) * 100;
+      setMaskPosition({
+        cx: `${cxPercentage}%`,
+        cy: `${cyPercentage}%`,
+      });
+    }
+  }, [cursor]);
+
+  return (
+    <svg
+      ref={svgRef}
+      width="100%"
+      height="100%"
+      viewBox="0 0 300 100"
+      xmlns="http://www.w3.org/2000/svg"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onMouseMove={(e) => setCursor({ x: e.clientX, y: e.clientY })}
+      className={cn("select-none uppercase cursor-pointer", className)}
+    >
+      <defs>
+        <linearGradient
+          id="textGradient"
+          gradientUnits="userSpaceOnUse"
+          cx="50%"
+          cy="50%"
+          r="25%"
+        >
+          {hovered && (
+            <>
+              <stop offset="0%" stopColor="#eab308" />
+              <stop offset="25%" stopColor="#ef4444" />
+              <stop offset="50%" stopColor="#80eeb4" />
+              <stop offset="75%" stopColor="#06b6d4" />
+              <stop offset="100%" stopColor="#8b5cf6" />
+            </>
+          )}
+        </linearGradient>
+
+        <motion.radialGradient
+          id="revealMask"
+          gradientUnits="userSpaceOnUse"
+          r="20%"
+          initial={{ cx: "50%", cy: "50%" }}
+          animate={maskPosition}
+          transition={{ duration: duration ?? 0, ease: "easeOut" }}
+        >
+          <stop offset="0%" stopColor="white" />
+          <stop offset="100%" stopColor="black" />
+        </motion.radialGradient>
+        <mask id="textMask">
+          <rect
+            x="0"
+            y="0"
+            width="100%"
+            height="100%"
+            fill="url(#revealMask)"
+          />
+        </mask>
+      </defs>
+      <text
+        x="50%"
+        y="50%"
+        textAnchor="middle"
+        dominantBaseline="middle"
+        strokeWidth="0.3"
+        className="fill-transparent stroke-neutral-200 font-[helvetica] text-7xl font-bold dark:stroke-neutral-800"
+        style={{ opacity: hovered ? 0.7 : 0 }}
+      >
+        {text}
+      </text>
+      <motion.text
+        x="50%"
+        y="50%"
+        textAnchor="middle"
+        dominantBaseline="middle"
+        strokeWidth="0.3"
+        className="fill-transparent stroke-[#3ca2fa] font-[helvetica] text-7xl font-bold 
+        dark:stroke-[#3ca2fa99]"
+        initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
+        animate={{
+          strokeDashoffset: 0,
+          strokeDasharray: 1000,
+        }}
+        transition={{
+          duration: 4,
+          ease: "easeInOut",
+        }}
+      >
+        {text}
+      </motion.text>
+      <text
+        x="50%"
+        y="50%"
+        textAnchor="middle"
+        dominantBaseline="middle"
+        stroke="url(#textGradient)"
+        strokeWidth="0.3"
+        mask="url(#textMask)"
+        className="fill-transparent font-[helvetica] text-7xl font-bold"
+      >
+        {text}
+      </text>
+    </svg>
+  );
+};
+
+export const FooterBackgroundGradient = () => {
+  return (
+    <div
+      className=" absolute inset-0 z-0"
+      style={{
+        background:
+          "radial-gradient(125% 125% at 50% 10%, #0F0F1166 50%, #3ca2fa33 100%)",
+      }}
+    />
+  );
+};

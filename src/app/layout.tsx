@@ -4,9 +4,9 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import FloatingNavBar from "@/components/floating-dock-demo";
 import { ThemeProvider } from "@/components/theme-provider";
-import Footer from "@/components/shadcn-space/blocks/footer-02/footer";
 
 import { Header } from "@/components/common components/navigation-menu/header-menu";
+import HoverFooter from "@/components/shadcn-space/blocks/footer-01/footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -54,7 +54,7 @@ export default function RootLayout({
           {children}
 
           <FloatingNavBar />
-          <Footer />
+          <HoverFooter />
         </ThemeProvider>
       </body>
     </html>

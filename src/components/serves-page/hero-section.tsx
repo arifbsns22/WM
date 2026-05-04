@@ -132,8 +132,10 @@ export function HeroSection() {
                       size="lg"
                       className="rounded-xl px-5 text-base"
                     >
-                      <Link href="#link">
-                        <span className="text-nowrap">Start Building</span>
+                      <Link href="#link" onClick={() =>{
+                        window.open("https://wa.me/+8801681583033", "_blank")
+                      }}>
+                        <span className="text-nowrap">Let's Talk</span>
                       </Link>
                     </Button>
                   </div>
@@ -144,8 +146,8 @@ export function HeroSection() {
                     variant="ghost"
                     className="h-10.5 rounded-xl px-5"
                   >
-                    <Link href="#link">
-                      <span className="text-nowrap">Request a demo</span>
+                    <Link href="/contact">
+                      <span className="text-nowrap">Contact Us</span>
                     </Link>
                   </Button>
                 </AnimatedGroup>

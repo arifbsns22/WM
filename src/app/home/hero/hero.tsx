@@ -20,7 +20,7 @@ type HeroSectionProps = {
 };
 
 function HeroSection({ avatarList }: HeroSectionProps) {
-  const phoneNumber = "8801681583033"; 
+  const phoneNumber = "8801681583033";
   const whatsappUrl = `https://wa.me/${phoneNumber}`;
 
   return (
@@ -61,11 +61,16 @@ function HeroSection({ avatarList }: HeroSectionProps) {
                 className="flex items-center flex-col md:flex-row justify-center gap-8"
               >
                 {/* WhatsApp Link Button */}
-                <Button 
+
+                <Button
                   asChild
                   className="relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer"
                 >
-                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <span className="relative z-10 transition-all duration-500">
                       Let's Talk
                     </span>
@@ -92,9 +97,9 @@ function HeroSection({ avatarList }: HeroSectionProps) {
                   <div className="gap-1 flex flex-col items-start">
                     <div className="flex gap-1">
                       {Array.from({ length: 5 }).map((_, index) => (
-                        <svg 
-                          key={index} 
-                          className="h-4 w-4 fill-yellow-400 text-yellow-400" 
+                        <svg
+                          key={index}
+                          className="h-4 w-4 fill-yellow-400 text-yellow-400"
                           viewBox="0 0 24 24"
                         >
                           <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
