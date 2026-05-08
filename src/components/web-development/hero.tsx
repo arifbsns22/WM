@@ -9,7 +9,7 @@ import {
 } from "react-icons/si";
 
 // --- ICON MAP (WITH BRAND COLORS) ---
-type IconType = (props: any) => JSX.Element;
+type IconType = (props: any) => React.ReactNode;
 
 const iconMap: Record<string, IconType> = {
   wordpress: (props) => <SiWordpress {...props} color="#21759B" />,

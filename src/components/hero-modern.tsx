@@ -57,7 +57,7 @@ const useThemeSync = () => {
     const onMedia = () => sync();
     media?.addEventListener("change", onMedia);
 
-    const onStorage = (event) => {
+    const onStorage = (event: StorageEvent) => {
       if (event.key === "hero-theme" || event.key === "bento-theme") sync();
     };
 
@@ -74,7 +74,7 @@ const useThemeSync = () => {
     };
   }, []);
 
-  return [theme, setTheme];
+  return [theme, setTheme] as const;
 };
 
 const DeckGlyph = ({ theme = "dark" }) => {
@@ -120,7 +120,7 @@ const DeckGlyph = ({ theme = "dark" }) => {
 function HeroOrbitDeck() {
   const [theme, setTheme] = useThemeSync();
   const [visible, setVisible] = useState(false);
-  const [mode, setMode] = useState("strategy");
+  const [mode, setMode] = useState<"strategy" | "execution">("strategy");
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -298,14 +298,14 @@ function HeroOrbitDeck() {
     },
   ];
 
-  const setSpotlight = (event) => {
+  const setSpotlight = (event: React.MouseEvent<HTMLLIElement>) => {
     const target = event.currentTarget;
     const rect = target.getBoundingClientRect();
     target.style.setProperty("--hero3-x", `${event.clientX - rect.left}px`);
     target.style.setProperty("--hero3-y", `${event.clientY - rect.top}px`);
   };
 
-  const clearSpotlight = (event) => {
+  const clearSpotlight = (event: React.MouseEvent<HTMLLIElement>) => {
     const target = event.currentTarget;
     target.style.removeProperty("--hero3-x");
     target.style.removeProperty("--hero3-y");

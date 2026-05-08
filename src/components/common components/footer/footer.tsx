@@ -58,7 +58,6 @@ function HoverFooter() {
       label: "Facebook",
       href: "https://www.facebook.com/WatermelonDigitalMarketingAgency/",
     },
-    ,
   ];
 
   return (

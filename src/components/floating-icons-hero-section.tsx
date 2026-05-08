@@ -153,7 +153,9 @@ const FloatingIconsHero = React.forwardRef<
           {subtitle}
         </p>
         <div className="mt-10">
-          <Button size="lg" className="px-8 py-6 text-base font-semibold" render={<a href={ctaHref} />} nativeButton={false}>{ctaText}</Button>
+          <Button size="lg" className="px-8 py-6 text-base font-semibold" asChild>
+            <a href={ctaHref}>{ctaText}</a>
+          </Button>
         </div>
       </div>
     </section>
