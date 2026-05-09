@@ -10,6 +10,7 @@
     "cssVariables": true,
     "prefix": ""
   },
+
   "iconLibrary": "lucide",
   "rtl": false,
   "menuColor": "default",
@@ -24,6 +25,7 @@
   "registries": {
     "@shadcn-space": "https://shadcnspace.com/r/{name}.json",
     "@aceternity": "https://ui.aceternity.com/registry/{name}.json",
-    "@lucide-animated": "https://lucide-animated.com/r/{name}.json"
+    "@lucide-animated": "https://lucide-animated.com/r/{name}.json",
+    "@reui": "https://reui.io/r/{style}/{name}.json"
   }
 }
