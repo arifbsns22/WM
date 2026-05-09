@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const classNames = (
   ...classes: (string | boolean | undefined | null)[]
@@ -106,7 +106,7 @@ function ImageCarousel() {
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [activeItem]);
+  }, []);
 
   return (
     <div className="w-full font-sans">

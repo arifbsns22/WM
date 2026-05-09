@@ -1,10 +1,10 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { LucideIcon, Plus } from "lucide-react";
+import { type LucideIcon, Plus } from "lucide-react";
+import { motion, useInView, useSpring, useTransform } from "motion/react";
 import { Instrument_Serif } from "next/font/google";
 import { useEffect, useRef } from "react";
-import { motion, useSpring, useTransform, useInView } from "motion/react";
+import { cn } from "@/lib/utils";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],

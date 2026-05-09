@@ -1,7 +1,7 @@
 "use client";
-import { cn } from "@/lib/utils";
+import { ArrowRightIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ArrowRightIcon, PhoneCallIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export function MarketingHeroSection() {
   return (
@@ -49,13 +49,17 @@ export function MarketingHeroSection() {
             "fade-in slide-in-from-bottom-10 animate-in fill-mode-backwards delay-200 duration-500 ease-out",
           )}
         >
-          We help brands scale faster with data-driven strategies, creative campaigns, and measurable results.
+          We help brands scale faster with data-driven strategies, creative
+          campaigns, and measurable results.
         </p>
 
         <div className="fade-in slide-in-from-bottom-10 flex w-fit animate-in items-center justify-center gap-3 fill-mode-backwards pt-2 delay-300 duration-500 ease-out">
-          <Button variant="outline" onClick={()=> {
-            window.open("https://wa.me/8801681583033", "_blank")
-          }}>
+          <Button
+            variant="outline"
+            onClick={() => {
+              window.open("https://wa.me/8801681583033", "_blank");
+            }}
+          >
             Let's Talk
           </Button>
           <Button>

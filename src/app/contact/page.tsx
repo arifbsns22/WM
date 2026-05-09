@@ -1,12 +1,7 @@
 import Contact from "@/components/contact page";
-import React from "react";
 
 const ContactUsPage = () => {
-  return (
-    <>
-      <Contact />
-    </>
-  );
+  return <Contact />;
 };
 
 export default ContactUsPage;

@@ -1,9 +1,9 @@
 "use client";
 
+import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { motion, useInView } from "motion/react";
 
 const Testimonials = () => {
   const sectionRef = useRef<HTMLElement>(null);

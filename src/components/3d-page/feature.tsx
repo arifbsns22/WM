@@ -1,5 +1,6 @@
-import React, { useState, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import type React from "react";
+import { useMemo, useState } from "react";
 
 type AiModel = {
   id: string;
@@ -50,8 +51,13 @@ export const AiModelsList: React.FC<Props> = ({ models, className = "" }) => {
   return (
     <div className={`w-full max-w-4xl mx-auto ${className}`}>
       <div className="flex flex-col justify-center items-center">
-        <h2 className="text-3xl font-semibold text-foreground mb-4">Our 3D Design Capabilities</h2>
-        <p className="text-sm text-gray-500 mb-4">We provide high-quality, detail-driven 3D solutions that enhance visual storytelling and elevate your brand presence.</p>
+        <h2 className="text-3xl font-semibold text-foreground mb-4">
+          Our 3D Design Capabilities
+        </h2>
+        <p className="text-sm text-gray-500 mb-4">
+          We provide high-quality, detail-driven 3D solutions that enhance
+          visual storytelling and elevate your brand presence.
+        </p>
       </div>
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {sorted.map((m) => (
@@ -137,7 +143,11 @@ export const AiModelsList: React.FC<Props> = ({ models, className = "" }) => {
                     {Object.entries(selected.meta).map(([k, v]) => (
                       <div key={k} className="flex gap-2">
                         <span className="w-32 text-muted-foreground">{k}:</span>
-                        <span>{typeof v === "object" ? JSON.stringify(v) : String(v)}</span>
+                        <span>
+                          {typeof v === "object"
+                            ? JSON.stringify(v)
+                            : String(v)}
+                        </span>
                       </div>
                     ))}
                   </div>

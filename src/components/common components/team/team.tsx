@@ -1,7 +1,7 @@
 "use client";
-import { Badge } from "@/components/ui/badge";
 import { Globe } from "lucide-react";
 import { motion } from "motion/react";
+import { Badge } from "@/components/ui/badge";
 
 const LinkedinIcon = ({ size = 16 }: { size?: number }) => (
   <svg

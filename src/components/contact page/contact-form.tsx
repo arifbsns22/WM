@@ -1,3 +1,5 @@
+import { Clock, Star } from "lucide-react";
+import Image from "next/image";
 import {
   Map,
   MapMarker,
@@ -5,9 +7,6 @@ import {
   MarkerLabel,
   MarkerPopup,
 } from "@/components/contact page/map";
-import { Button } from "@/components/ui/button";
-import { Star, Navigation, Clock, ExternalLink } from "lucide-react";
-import Image from "next/image";
 
 const places = [
   {

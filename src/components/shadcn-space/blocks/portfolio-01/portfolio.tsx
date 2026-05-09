@@ -1,8 +1,8 @@
 "use client";
 
+import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { motion } from "motion/react";
 
 type PortfolioData = {
   portfolio_image: string;

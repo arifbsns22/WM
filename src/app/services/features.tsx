@@ -1,11 +1,11 @@
 import {
   Building2,
   Lightbulb,
+  type LucideIcon,
   ScreenShare,
   Trophy,
   User,
   User2,
-  LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 

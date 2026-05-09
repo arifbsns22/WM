@@ -1,6 +1,5 @@
-import { CircleUserRound, FolderKanban, PanelsTopLeft } from "lucide-react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./tab";
 import Image from "next/image";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./tab";
 
 export default function TabsDemo() {
   return (

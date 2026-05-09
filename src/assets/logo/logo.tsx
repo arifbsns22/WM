@@ -1,7 +1,7 @@
-import type { SVGAttributes } from "react";
 import Image from "next/image";
+import type { SVGAttributes } from "react";
 
-const Logo = (props: SVGAttributes<SVGElement>) => {
+const Logo = (_props: SVGAttributes<SVGElement>) => {
   return (
     <div className="flex items-center gap-2.5">
       <Image

@@ -1,3 +1,4 @@
+import { PlusIcon } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -5,7 +6,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
-import { PlusIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const FAQ_DATA = [

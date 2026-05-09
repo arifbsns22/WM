@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
+import HoverFooter from "@/components/common components/footer/footer";
+import { Header } from "@/components/common components/navigation-menu/header-menu";
 import FloatingNavBar from "@/components/floating-dock-demo";
 import { ThemeProvider } from "@/components/theme-provider";
-
-import { Header } from "@/components/common components/navigation-menu/header-menu";
-import HoverFooter from "@/components/common components/footer/footer";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 

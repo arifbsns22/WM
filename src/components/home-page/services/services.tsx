@@ -1,19 +1,19 @@
 "use client";
 
+import {
+  AppWindowMac,
+  ArrowUpRight,
+  BarChart3,
+  Image,
+  type LucideIcon,
+  SwatchBook,
+  WandSparkles,
+} from "lucide-react";
+import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import {
-  LucideIcon,
-  AppWindowMac,
-  Image,
-  SwatchBook,
-  WandSparkles,
-  ArrowUpRight,
-  BarChart3,
-} from "lucide-react";
 
 type ServiceData = {
   service_icon: LucideIcon;
@@ -134,13 +134,16 @@ const Services = () => {
                 </p>
               </div>
               <div className="flex md:flex-row flex-col items-center gap-4">
-                <Button onClick={() =>{
-                  window.open("https://wa.me/8801681583033", "_blank")
-                }} className="group text-sm font-medium text-black bg-white hover:text-black dark:hover:text-black hover:bg-white/90 rounded-full flex items-center gap-4 p-1 ps-5 w-fit h-12 cursor-pointer">
-                    <span>Let’s Collaborate</span>
-                    <div className="p-3 bg-black text-white rounded-full group-hover:rotate-45 transition-transform duration-300 ease-in-out">
-                      <ArrowUpRight size={16} />
-                    </div>
+                <Button
+                  onClick={() => {
+                    window.open("https://wa.me/8801681583033", "_blank");
+                  }}
+                  className="group text-sm font-medium text-black bg-white hover:text-black dark:hover:text-black hover:bg-white/90 rounded-full flex items-center gap-4 p-1 ps-5 w-fit h-12 cursor-pointer"
+                >
+                  <span>Let’s Collaborate</span>
+                  <div className="p-3 bg-black text-white rounded-full group-hover:rotate-45 transition-transform duration-300 ease-in-out">
+                    <ArrowUpRight size={16} />
+                  </div>
                 </Button>
                 <Button className="group text-sm font-medium text-white bg-gray-950 hover:text-white dark:hover:text-white hover:bg-gray-950/90 rounded-full border border-white/50 flex items-center gap-4 p-1 ps-5 w-fit h-12 cursor-pointer">
                   <a href="/contact" className="flex items-center gap-4">

@@ -64,7 +64,7 @@ const FeatureCard = ({ feature }: { feature: FeatureItem }) => {
       className={cn(
         "relative rounded-2xl px-4 pt-5 pb-4 text-sm",
         "bg-secondary/50 ring-border ring transition duration-300 hover:shadow-lg",
-        feature.cornerStyle
+        feature.cornerStyle,
       )}
     >
       <div className="mb-4 bg-primary/10 p-3 rounded-xl w-fit">
@@ -80,12 +80,10 @@ const FeatureCard = ({ feature }: { feature: FeatureItem }) => {
         {feature.title}
       </h2>
 
-      
       <p className="text-muted-foreground text-base text-pretty">
         {feature.description}
       </p>
 
-    
       <span className="from-primary/0 via-primary to-primary/0 absolute -bottom-px left-1/2 h-px w-1/2 -translate-x-1/2 bg-gradient-to-r opacity-60"></span>
       <span className="absolute inset-0 bg-[radial-gradient(30%_5%_at_50%_100%,hsl(var(--primary)/0.15)_0%,transparent_100%)] opacity-60"></span>
     </div>
@@ -97,7 +95,6 @@ export default function GraphicFeature() {
     <section className="pt-20 pb-10" id="features">
       <div className="mx-6 max-w-[1120px] pt-2 pb-16 min-[1150px]:mx-auto">
         <div className="flex flex-col-reverse gap-6 md:grid md:grid-cols-3">
-
           <div className="flex flex-col gap-6">
             {leftFeatures.map((feature, index) => (
               <FeatureCard key={index} feature={feature} />
@@ -114,7 +111,9 @@ export default function GraphicFeature() {
             </h2>
 
             <p className="text-muted-foreground mx-auto max-w-[18rem]">
-           simplifies every step of your graphic design workflow with complete tools for planning, managing, and delivering creative projects.
+              simplifies every step of your graphic design workflow with
+              complete tools for planning, managing, and delivering creative
+              projects.
             </p>
           </div>
 
@@ -123,7 +122,6 @@ export default function GraphicFeature() {
               <FeatureCard key={index} feature={feature} />
             ))}
           </div>
-
         </div>
       </div>
     </section>

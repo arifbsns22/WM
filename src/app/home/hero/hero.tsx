@@ -1,9 +1,9 @@
 "use client";
 
+import { ArrowUpRight } from "lucide-react";
+import { motion } from "motion/react";
 import { Instrument_Serif } from "next/font/google";
 import { Button } from "@/components/ui/button";
-import { motion } from "motion/react";
-import { ArrowUpRight } from "lucide-react";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],

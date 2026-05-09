@@ -20,8 +20,8 @@ const GraphicDesignPage = () => {
       </div>
       <div className="items-center justify-center ">
         <ImageCarousel />
-        <Team/>
-        <BrandingService/>
+        <Team />
+        <BrandingService />
         <ServiceListCards />
         <Faq />
         <CTA />

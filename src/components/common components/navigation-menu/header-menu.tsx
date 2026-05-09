@@ -1,10 +1,28 @@
 "use client";
+import {
+  FileText,
+  GlobeIcon,
+  Handshake,
+  HelpCircle,
+  LayersIcon,
+  Leaf,
+  ListTodoIcon,
+  type LucideIcon,
+  MegaphoneIcon,
+  PhoneCallIcon,
+  RotateCcw,
+  Shield,
+  Star,
+  UserPlusIcon,
+  Users,
+} from "lucide-react";
 // Fixed: navigation menu items now use proper keys
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 import { createPortal } from "react-dom";
+import Logo from "@/assets/logo/logo";
+import { ThemeSwitch } from "@/components/mode-toggle";
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,31 +31,9 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import {
-  ListTodoIcon,
-  LucideIcon,
-  MegaphoneIcon,
-  MoonIcon,
-} from "lucide-react";
-import {
-  CodeIcon,
-  GlobeIcon,
-  LayersIcon,
-  UserPlusIcon,
-  Users,
-  Star,
-  FileText,
-  Shield,
-  RotateCcw,
-  Handshake,
-  Leaf,
-  HelpCircle,
-  BarChart,
-  PlugIcon,
-} from "lucide-react";
+import { cn } from "@/lib/utils";
 import { MenuToggleIcon } from "./menu-toggle-icon";
-import { ThemeSwitch } from "@/components/mode-toggle";
-import Logo from "@/assets/logo/logo";
+import { MobileIcon } from "@radix-ui/react-icons";
 
 type LinkItem = {
   title: string;
@@ -75,12 +71,14 @@ export function Header() {
           </a>
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
-              <a
-                href="/"
-                className="px-4 text-1xl font-medium hover:bg-accent rounded-md p-2"
-              >
-                Home
-              </a>
+              <NavigationMenuItem>
+                <a
+                  href="/"
+                  className="px-4 text-1xl font-medium hover:bg-accent rounded-md p-2"
+                >
+                  Home
+                </a>
+              </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent text-1xl font-medium">
                   Services
@@ -106,47 +104,22 @@ export function Header() {
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-              {/* <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-1xl font-medium">
-                  Company
-                </NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-background p-1 pr-1.5 pb-1.5">
-                  <div className="grid w-lg grid-cols-2 gap-2">
-                    <ul className="bg-popover space-y-2 rounded-md border p-2 shadow">
-                      {companyLinks.map((item) => (
-                        <li key={item.title}>
-                          <ListItem {...item} />
-                        </li>
-                      ))}
-                    </ul>
-                    <ul className="space-y-2 p-3">
-                      {companyLinks2.map((item) => (
-                        <li key={item.title}>
-                          <NavigationMenuLink
-                            href={item.href}
-                            className="flex p-2 hover:bg-accent flex-row rounded-md items-center gap-x-2"
-                          >
-                            <item.icon className="text-foreground size-4" />
-                            <span className="font-medium">{item.title}</span>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem> */}
-              <a
-                href="/about"
-                className="px-4 text-1xl font-medium hover:bg-accent rounded-md p-2"
-              >
-                About
-              </a>
-              <a
-                href="/contact"
-                className="px-4 text-1xl font-medium hover:bg-accent rounded-md p-2"
-              >
-                Contact
-              </a>
+              <NavigationMenuItem>
+                <a
+                  href="/about"
+                  className="px-4 text-1xl font-medium hover:bg-accent rounded-md p-2"
+                >
+                  About
+                </a>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <a
+                  href="/contact"
+                  className="px-4 text-1xl font-medium hover:bg-accent rounded-md p-2"
+                >
+                  Contact
+                </a>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
         </div>
@@ -178,25 +151,41 @@ export function Header() {
         className="flex flex-col justify-between gap-2 overflow-y-auto"
       >
         <NavigationMenu className="max-w-full">
-          <div className="flex w-full flex-col gap-y-2">
-            <span className="text-sm">Product</span>
+          <NavigationMenuList className="flex w-full flex-col gap-y-2">
+            <span className="text-sm font-semibold text-muted-foreground px-2 pt-2">
+              Our Services
+            </span>
             {servicesLinks.map((link) => (
-              <ListItem key={link.title} {...link} />
+              <NavigationMenuItem key={link.title} className="w-full">
+                <ListItem {...link} />
+              </NavigationMenuItem>
             ))}
-            <span className="text-sm">Company</span>
+            <span className="text-sm font-semibold text-muted-foreground px-2 pt-2">
+              Company
+            </span>
             {companyLinks.map((link) => (
-              <ListItem key={link.title} {...link} />
+              <NavigationMenuItem key={link.title} className="w-full">
+                <ListItem {...link} />
+              </NavigationMenuItem>
             ))}
             {companyLinks2.map((link) => (
-              <ListItem key={link.title} {...link} />
+              <NavigationMenuItem key={link.title} className="w-full">
+                <ListItem {...link} />
+              </NavigationMenuItem>
             ))}
-          </div>
+          </NavigationMenuList>
         </NavigationMenu>
         <div className="flex flex-col gap-2">
-          <Button variant="outline" className="w-full bg-transparent">
-            Sign In
+          <Button
+            onClick={() => {
+              window.open("https://app.watermelondigi.com/public/", "_blank");
+            }}
+            variant="outline"
+            className="w-full bg-transparent"
+          >
+            Log In
           </Button>
-          <Button className="w-full">Get Started</Button>
+          <Button className="w-full">Let's Talk</Button>
         </div>
       </MobileMenu>
     </header>
@@ -215,7 +204,7 @@ function MobileMenu({ open, children, className, ...props }: MobileMenuProps) {
       id="mobile-menu"
       className={cn(
         "bg-background/95 supports-backdrop-filter:bg-background/50 backdrop-blur-lg",
-        "fixed top-14 right-0 bottom-0 left-0 z-40 flex flex-col overflow-hidden border-y md:hidden",
+        "fixed top-18 right-0 bottom-0 left-0 z-50 flex flex-col overflow-hidden border-y md:hidden",
       )}
     >
       <div
@@ -301,51 +290,19 @@ const servicesLinks: LinkItem[] = [
 const companyLinks: LinkItem[] = [
   {
     title: "About Us",
-    href: "#",
-    description: "Learn more about our story and team",
+    href: "/about",
+    description: "Who We Are",
     icon: Users,
   },
   {
-    title: "Our Works",
-    href: "#",
-    description: "See how we’ve helped our clients succeed",
-    icon: Star,
-  },
-  {
-    title: "Partnerships",
-    href: "#",
-    icon: Handshake,
-    description: "Collaborate with us for mutual growth",
+    title: "Contact Us",
+    href: "/contact",
+    description: "Let's Work Together",
+    icon: PhoneCallIcon,
   },
 ];
 
-const companyLinks2: LinkItem[] = [
-  {
-    title: "Terms of Service",
-    href: "#",
-    icon: FileText,
-  },
-  {
-    title: "Privacy Policy",
-    href: "#",
-    icon: Shield,
-  },
-  {
-    title: "Refund Policy",
-    href: "#",
-    icon: RotateCcw,
-  },
-  {
-    title: "Blog",
-    href: "#",
-    icon: Leaf,
-  },
-  {
-    title: "Help Center",
-    href: "#",
-    icon: HelpCircle,
-  },
-];
+const companyLinks2: LinkItem[] = [];
 
 function useScroll(threshold: number) {
   const [scrolled, setScrolled] = React.useState(false);

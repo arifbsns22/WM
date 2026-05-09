@@ -1,7 +1,6 @@
-'use client';
+"use client";
 
 import { TextType } from "./text-type";
-
 
 export default function AnimatedTextType() {
   return (
@@ -9,7 +8,7 @@ export default function AnimatedTextType() {
       <div className="text-center">
         <h1 className="text-foreground text-3xl md:text-5xl">
           <TextType
-            text={['why choose', 'our video editing', 'services']}
+            text={["why choose", "our video editing", "services"]}
             typingSpeed={75}
             pauseDuration={1500}
             showCursor={true}

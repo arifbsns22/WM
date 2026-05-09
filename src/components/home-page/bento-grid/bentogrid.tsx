@@ -1,6 +1,6 @@
-import { Badge } from "@/components/ui/badge";
-import ReminderAnimation from "@/components/home-page/bento-grid/ReminderAnimation";
 import AnimatedUiBlock from "@/components/home-page/bento-grid/AnimatedUiBlock";
+import ReminderAnimation from "@/components/home-page/bento-grid/ReminderAnimation";
+import { Badge } from "@/components/ui/badge";
 
 const Bentogrid = () => {
   return (

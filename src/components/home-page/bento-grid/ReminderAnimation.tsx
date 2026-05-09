@@ -4,13 +4,13 @@ import {
   Check,
   CodeIcon,
   FileTextIcon,
-  LucideIcon,
+  type LucideIcon,
   MonitorCloudIcon,
   ShoppingBagIcon,
   StoreIcon,
   TabletSmartphoneIcon,
 } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 type Item = {

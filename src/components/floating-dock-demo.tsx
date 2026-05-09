@@ -1,11 +1,10 @@
-import React from "react";
-import { FloatingDock } from "@/components/ui/floating-dock";
 import {
-  IconList,
-  IconSend,
   IconClipboardText,
   IconLayoutGridAdd,
+  IconList,
+  IconSend,
 } from "@tabler/icons-react";
+import { FloatingDock } from "@/components/ui/floating-dock";
 
 export default function FloatingNavBar() {
   const links = [

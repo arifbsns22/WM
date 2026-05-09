@@ -1,8 +1,8 @@
 "use client";
 
-import { Phone, MapPin, MailIcon } from "lucide-react";
+import { MailIcon, MapPin, Phone } from "lucide-react";
+import { SiFacebook, SiInstagram, SiYoutube } from "react-icons/si";
 import { FooterBackgroundGradient, TextHoverEffect } from "./hover-footer";
-import { SiDribbble, SiFacebook, SiInstagram, SiYoutube } from "react-icons/si";
 
 function HoverFooter() {
   const handleSocialClick = (href: string) => {

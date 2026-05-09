@@ -11,9 +11,9 @@ const WebDevelopmentPage = () => {
   return (
     <>
       <WebHero />
-      <TabsDemo/>
+      <TabsDemo />
       <BentoGrid1 />
-      <StepsAnimated/>
+      <StepsAnimated />
       <ServiceListCards />
       <Faq />
       <CTA />

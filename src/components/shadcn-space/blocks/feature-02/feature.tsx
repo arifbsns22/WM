@@ -1,8 +1,8 @@
+import { Asterisk, type LucideIcon } from "lucide-react";
+import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Asterisk, LucideIcon } from "lucide-react";
-import { motion } from "motion/react";
 
 type Features = {
   icon: LucideIcon;

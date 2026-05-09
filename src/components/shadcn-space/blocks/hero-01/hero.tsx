@@ -1,9 +1,9 @@
 "use client";
 
+import { ArrowUpRight } from "lucide-react";
+import { motion } from "motion/react";
 import { Instrument_Serif } from "next/font/google";
 import { Button } from "@/components/ui/button";
-import { motion } from "motion/react";
-import { ArrowUpRight } from "lucide-react";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -56,9 +56,12 @@ function HeroSection({ avatarList }: HeroSectionProps) {
                 transition={{ duration: 1, delay: 0.2, ease: "easeInOut" }}
                 className="flex items-center flex-col md:flex-row justify-center gap-8"
               >
-                <Button onClick={() =>{
-                  window.open("https://wa.me/8801681583033", "_blank")
-                }} className="relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer">
+                <Button
+                  onClick={() => {
+                    window.open("https://wa.me/8801681583033", "_blank");
+                  }}
+                  className="relative text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer"
+                >
                   <span className="relative z-10 transition-all duration-500">
                     Let's Talk
                   </span>

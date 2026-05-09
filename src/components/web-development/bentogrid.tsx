@@ -1,14 +1,21 @@
-'use client';
-import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
-import { ArrowRight, Clock, Code, FileText, Layers, Palette, PersonStanding, Rocket, Smartphone, Zap, ZapIcon } from 'lucide-react';
+"use client";
+import { motion } from "framer-motion";
+import {
+  Clock,
+  Code,
+  PersonStanding,
+  Rocket,
+  Smartphone,
+  ZapIcon,
+} from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface BentoGridItemProps {
   title: string;
   description: string;
   icon: React.ReactNode;
   className?: string;
-  size?: 'small' | 'medium' | 'large';
+  size?: "small" | "medium" | "large";
 }
 
 const BentoGridItem = ({
@@ -16,14 +23,14 @@ const BentoGridItem = ({
   description,
   icon,
   className,
-  size = 'small',
+  size = "small",
 }: BentoGridItemProps) => {
   const variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: 'spring' as const, damping: 25 },
+      transition: { type: "spring" as const, damping: 25 },
     },
   };
 
@@ -31,7 +38,7 @@ const BentoGridItem = ({
     <motion.div
       variants={variants}
       className={cn(
-        'group border-primary/10 bg-background hover:border-primary/30 relative flex h-full cursor-pointer flex-col justify-between overflow-hidden rounded-xl border px-6 pt-6 pb-10 shadow-md transition-all duration-500',
+        "group border-primary/10 bg-background hover:border-primary/30 relative flex h-full cursor-pointer flex-col justify-between overflow-hidden rounded-xl border px-6 pt-6 pb-10 shadow-md transition-all duration-500",
         className,
       )}
     >
@@ -57,43 +64,42 @@ const BentoGridItem = ({
 
 const items = [
   {
-    title: 'Completed More Than 20 Projects',
+    title: "Completed More Than 20 Projects",
     description:
-      'Completed more than twenty projects with proven client satisfaction',
+      "Completed more than twenty projects with proven client satisfaction",
     icon: <Code className="size-6" />,
-    size: 'large' as const,
+    size: "large" as const,
   },
   {
-    title: 'Super Fast Loading',
+    title: "Super Fast Loading",
     description:
-      'Speed optimized design for incredibly fast loading performance',
+      "Speed optimized design for incredibly fast loading performance",
     icon: <ZapIcon className="size-6" />,
-    size: 'small' as const,
+    size: "small" as const,
   },
   {
-    title: 'Mobile Responsive',
-    description: 'Create layouts that adapt to any screen size with ease.',
+    title: "Mobile Responsive",
+    description: "Create layouts that adapt to any screen size with ease.",
     icon: <Smartphone className="size-6" />,
-    size: 'medium' as const,
+    size: "medium" as const,
   },
   {
-    title: 'Super Fast and Secure',
+    title: "Super Fast and Secure",
     description: "Speed Optimized and Fully Secure",
     icon: <Rocket className="size-6" />,
-    size: 'medium' as const,
+    size: "medium" as const,
   },
   {
-    title: 'User Management',
-    description: 'Advanced User Control and Management',
+    title: "User Management",
+    description: "Advanced User Control and Management",
     icon: <PersonStanding className="size-6" />,
-    size: 'small' as const,
+    size: "small" as const,
   },
   {
-    title: '24/7 Support',
-    description:
-      '24/7 Dedicated Support for Your Business Needs',
+    title: "24/7 Support",
+    description: "24/7 Dedicated Support for Your Business Needs",
     icon: <Clock className="size-6" />,
-    size: 'large' as const,
+    size: "large" as const,
   },
 ];
 
@@ -110,9 +116,11 @@ export default function BentoGrid1() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
-        <div className='flex items-center justify-center mb-10'>
-            <h2 className='text-4xl'>No matter your business, a website takes you the extra mile</h2>
-        </div>
+      <div className="flex items-center justify-center mb-10">
+        <h2 className="text-4xl">
+          No matter your business, a website takes you the extra mile
+        </h2>
+      </div>
       <motion.div
         className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-6"
         variants={containerVariants}
@@ -127,12 +135,12 @@ export default function BentoGrid1() {
             icon={item.icon}
             size={item.size}
             className={cn(
-              item.size === 'large'
-                ? 'col-span-4'
-                : item.size === 'medium'
-                  ? 'col-span-3'
-                  : 'col-span-2',
-              'h-full',
+              item.size === "large"
+                ? "col-span-4"
+                : item.size === "medium"
+                  ? "col-span-3"
+                  : "col-span-2",
+              "h-full",
             )}
           />
         ))}

@@ -1,13 +1,11 @@
 "use client";
 
+import Feature from "@/components/3d-page/feature-list";
 import { HeroScrub } from "@/components/3d-page/hero";
+import Portfolio from "@/components/3d-page/portfolio";
 import CTA from "@/components/common components/cta/cta";
 import Faq from "@/components/common components/faq/faq";
 import ServiceListCards from "@/components/common components/services-list/service-cards";
-import Portfolio from "@/components/3d-page/portfolio";
-import React from "react";
-import { AiModelsList } from "@/components/3d-page/feature";
-import Feature from "@/components/3d-page/feature-list";
 
 const ThreeDPage = () => {
   return (

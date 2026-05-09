@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
 import { motion, type Variants } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function VideoHeroSection() {
   const containerVariants: Variants = {
@@ -56,14 +56,18 @@ export function VideoHeroSection() {
       </motion.p>
 
       <motion.div variants={itemVariants} className="flex gap-4">
-        <Button onClick={() =>{
-                  window.open("https://wa.me/8801681583033", "_blank")
-                }} size="lg" className="gap-2">
+        <Button
+          onClick={() => {
+            window.open("https://wa.me/8801681583033", "_blank");
+          }}
+          size="lg"
+          className="gap-2"
+        >
           Let's Talk
           <ArrowRight className="h-4 w-4" />
         </Button>
         <Button size="lg" variant="outline">
-         <a href="/contact">Contact Us</a>
+          <a href="/contact">Contact Us</a>
         </Button>
       </motion.div>
 

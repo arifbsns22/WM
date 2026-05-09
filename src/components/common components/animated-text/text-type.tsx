@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { gsap } from 'gsap';
+import { gsap } from "gsap";
 import {
   createElement,
-  ElementType,
+  type ElementType,
   useCallback,
   useEffect,
   useMemo,
   useRef,
   useState,
-} from 'react';
+} from "react";
 
 interface TextTypeProps {
   className?: string;
@@ -34,17 +34,17 @@ interface TextTypeProps {
 
 export const TextType = ({
   text,
-  as: Component = 'div',
+  as: Component = "div",
   typingSpeed = 50,
   initialDelay = 0,
   pauseDuration = 2000,
   deletingSpeed = 30,
   loop = true,
-  className = '',
+  className = "",
   showCursor = true,
   hideCursorWhileTyping = false,
-  cursorCharacter = '|',
-  cursorClassName = '',
+  cursorCharacter = "|",
+  cursorClassName = "",
   cursorBlinkDuration = 0.5,
   textColors = [],
   variableSpeed,
@@ -53,7 +53,7 @@ export const TextType = ({
   reverseMode = false,
   ...props
 }: Readonly<TextTypeProps & React.HTMLAttributes<HTMLElement>>) => {
-  const [displayedText, setDisplayedText] = useState('');
+  const [displayedText, setDisplayedText] = useState("");
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -103,7 +103,7 @@ export const TextType = ({
         duration: cursorBlinkDuration,
         repeat: -1,
         yoyo: true,
-        ease: 'power2.inOut',
+        ease: "power2.inOut",
       });
     }
   }, [showCursor, cursorBlinkDuration]);
@@ -115,11 +115,11 @@ export const TextType = ({
 
     const currentText = textArray[currentTextIndex];
     const processedText = reverseMode
-      ? currentText.split('').reverse().join('')
+      ? currentText.split("").reverse().join("")
       : currentText;
 
     const handleDeleting = () => {
-      if (displayedText === '') {
+      if (displayedText === "") {
         setIsDeleting(false);
         if (currentTextIndex === textArray.length - 1 && !loop) {
           return;
@@ -163,7 +163,7 @@ export const TextType = ({
       }
     };
 
-    if (currentCharIndex === 0 && !isDeleting && displayedText === '') {
+    if (currentCharIndex === 0 && !isDeleting && displayedText === "") {
       timeout = setTimeout(executeTypingAnimation, initialDelay);
     } else {
       executeTypingAnimation();
@@ -209,7 +209,7 @@ export const TextType = ({
       <span
         ref={cursorRef}
         className={`text-primary ml-1 inline-block opacity-100 ${
-          shouldHideCursor ? 'hidden' : ''
+          shouldHideCursor ? "hidden" : ""
         } ${cursorClassName}`}
       >
         {cursorCharacter}

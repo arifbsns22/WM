@@ -1,10 +1,25 @@
-import React from 'react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import {
+  BarChart3,
+  FileText,
+  Mail,
+  Megaphone,
+  Search,
+  Share2,
+} from "lucide-react";
+import type React from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import {Share2, Search, Megaphone, FileText, BarChart3, Mail, } from 'lucide-react';
 
 // Define the icon type.
-type IconType = React.ElementType | React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+type IconType =
+  | React.ElementType
+  | React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
 
 // --- 📦 API (Props) Definition ---
 export interface FeatureItem {
@@ -46,8 +61,9 @@ const FeatureGrid: React.FC<FeatureGridProps> = ({
   return (
     <section
       className={cn("py-16 sm:py-24 bg-background text-foreground", className)}
-      role="region"
-      aria-label={sectionTitle ? `Features: ${sectionTitle}` : "Product Features"}
+      aria-label={
+        sectionTitle ? `Features: ${sectionTitle}` : "Product Features"
+      }
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -99,7 +115,6 @@ const FeatureGrid: React.FC<FeatureGridProps> = ({
   );
 };
 
-
 // --- Example Usage Snippet ---
 
 const mockFeatures: FeatureItem[] = [
@@ -107,37 +122,43 @@ const mockFeatures: FeatureItem[] = [
     id: "Social Media Marketing",
     icon: Share2,
     title: "Social Media Growth",
-    description: "We build engaging content and campaigns that grow your audience and boost brand awareness.",
+    description:
+      "We build engaging content and campaigns that grow your audience and boost brand awareness.",
   },
   {
     id: "SEO Optimization",
     icon: Search,
     title: "SEO That Ranks",
-    description: "Improve your visibility on search engines and attract high-quality organic traffic.",
+    description:
+      "Improve your visibility on search engines and attract high-quality organic traffic.",
   },
   {
     id: "Paid Advertising",
     icon: Megaphone,
     title: "High-Converting Ads",
-    description: "Run targeted ad campaigns that maximize ROI and generate real leads.",
+    description:
+      "Run targeted ad campaigns that maximize ROI and generate real leads.",
   },
   {
     id: "Content Marketing",
     icon: FileText,
     title: "Content That Converts",
-    description: "We create powerful content that connects with your audience and drives action.",
+    description:
+      "We create powerful content that connects with your audience and drives action.",
   },
   {
     id: "Analytics & Reporting",
     icon: BarChart3,
     title: "Data-Driven Insights",
-    description: "Track performance with clear reports and optimize campaigns for better results.",
+    description:
+      "Track performance with clear reports and optimize campaigns for better results.",
   },
   {
     id: "Email Marketing",
     icon: Mail,
     title: "Smart Email Campaigns",
-    description: "Convert leads into loyal customers with personalized email strategies.",
+    description:
+      "Convert leads into loyal customers with personalized email strategies.",
   },
 ];
 

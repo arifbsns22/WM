@@ -1,6 +1,3 @@
-import { cn } from "@/lib/utils";
-import { useState } from "react";
-
 export default function Portfolio() {
   return (
     <>
@@ -12,13 +9,14 @@ export default function Portfolio() {
         }
       `}</style>
 
-      
       <section className="w-full flex flex-col items-center justify-start py-12">
-      
         <div className="max-w-3xl text-center px-4">
-          <h1 className="text-3xl font-semibold">Premium 3D Design & Visualization</h1>
+          <h1 className="text-3xl font-semibold">
+            Premium 3D Design & Visualization
+          </h1>
           <p className="text-sm text-slate-500 mt-2">
-            We deliver high-quality, photorealistic 3D visuals that elevate brands and bring ideas to life with precision.
+            We deliver high-quality, photorealistic 3D visuals that elevate
+            brands and bring ideas to life with precision.
           </p>
         </div>
 

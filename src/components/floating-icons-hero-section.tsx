@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import { motion, useMotionValue, useSpring } from "framer-motion";
+import * as React from "react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 // Interface for the props of each individual icon.
 interface IconProps {
@@ -44,15 +44,15 @@ const Icon = ({
       if (ref.current) {
         const rect = ref.current.getBoundingClientRect();
         const distance = Math.sqrt(
-          Math.pow(mouseX.current - (rect.left + rect.width / 2), 2) +
-            Math.pow(mouseY.current - (rect.top + rect.height / 2), 2)
+          (mouseX.current - (rect.left + rect.width / 2)) ** 2 +
+            (mouseY.current - (rect.top + rect.height / 2)) ** 2,
         );
 
         // If the cursor is close enough, repel the icon
         if (distance < 150) {
           const angle = Math.atan2(
             mouseY.current - (rect.top + rect.height / 2),
-            mouseX.current - (rect.left + rect.width / 2)
+            mouseX.current - (rect.left + rect.width / 2),
           );
           // The closer the cursor, the stronger the repulsion
           const force = (1 - distance / 150) * 50;
@@ -66,8 +66,8 @@ const Icon = ({
       }
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [x, y, mouseX, mouseY]);
 
   return (
@@ -85,7 +85,7 @@ const Icon = ({
         duration: 0.6,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className={cn('absolute', iconData.className)}
+      className={cn("absolute", iconData.className)}
     >
       {/* Inner wrapper for the continuous floating animation */}
       <motion.div
@@ -98,8 +98,8 @@ const Icon = ({
         transition={{
           duration: 5 + ((index * 3) % 5),
           repeat: Infinity,
-          repeatType: 'mirror',
-          ease: 'easeInOut',
+          repeatType: "mirror",
+          ease: "easeInOut",
         }}
       >
         <iconData.icon className="w-8 h-8 md:w-10 md:h-10 text-foreground" />
@@ -126,8 +126,8 @@ const FloatingIconsHero = React.forwardRef<
       ref={ref}
       onMouseMove={handleMouseMove}
       className={cn(
-        'relative w-full h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-background',
-        className
+        "relative w-full h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-background",
+        className,
       )}
       {...props}
     >
@@ -153,7 +153,11 @@ const FloatingIconsHero = React.forwardRef<
           {subtitle}
         </p>
         <div className="mt-10">
-          <Button size="lg" className="px-8 py-6 text-base font-semibold" asChild>
+          <Button
+            size="lg"
+            className="px-8 py-6 text-base font-semibold"
+            asChild
+          >
             <a href={ctaHref}>{ctaText}</a>
           </Button>
         </div>
@@ -162,6 +166,6 @@ const FloatingIconsHero = React.forwardRef<
   );
 });
 
-FloatingIconsHero.displayName = 'FloatingIconsHero';
+FloatingIconsHero.displayName = "FloatingIconsHero";
 
 export { FloatingIconsHero };

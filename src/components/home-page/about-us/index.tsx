@@ -1,6 +1,6 @@
 "use client";
-import AboutUs from "@/components/home-page/about-us/about-us";
 import { Target, WandSparkles, Zap } from "lucide-react";
+import AboutUs from "@/components/home-page/about-us/about-us";
 
 const aboutusData = [
   {
@@ -37,12 +37,7 @@ const statisticsCounter = [
 
 const AboutAndStats01 = () => {
   return (
-    <>
-      <AboutUs
-        aboutusData={aboutusData}
-        statisticsCounter={statisticsCounter}
-      />
-    </>
+    <AboutUs aboutusData={aboutusData} statisticsCounter={statisticsCounter} />
   );
 };
 

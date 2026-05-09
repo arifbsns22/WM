@@ -1,11 +1,12 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import type React from "react";
+import { useEffect, useState } from "react";
 import {
-  SiWordpress,
-  SiReact,
-  SiNextdotjs,
-  SiShopify,
   SiLaravel,
+  SiNextdotjs,
+  SiReact,
+  SiShopify,
+  SiWordpress,
 } from "react-icons/si";
 
 // --- ICON MAP (WITH BRAND COLORS) ---
@@ -131,7 +132,6 @@ export default function WebHero() {
 
       <div className="min-h-screen bg-gray-50 dark:bg-black py-12 px-4 transition-colors">
         <div className="max-w-7xl mx-auto text-center">
-
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-1 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 text-sm font-medium mb-6">
             MODERN STACK
@@ -165,7 +165,6 @@ export default function WebHero() {
           <div className={isVisible ? "animate-slide-up" : "opacity-0"}>
             <CodeDisplay isVisible={isVisible} />
           </div>
-
         </div>
       </div>
     </div>

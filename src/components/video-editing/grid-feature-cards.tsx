@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
 import React from "react";
+import { cn } from "@/lib/utils";
 
 type FeatureType = {
   title: string;
@@ -102,8 +102,10 @@ function GridPattern({
 function genRandomPattern(featureTitle: string, length?: number): number[][] {
   length = length ?? 5;
   // Use a simple hash of the title to seed the "randomness"
-  const seed = featureTitle.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-  
+  const seed = featureTitle
+    .split("")
+    .reduce((acc, char) => acc + char.charCodeAt(0), 0);
+
   return Array.from({ length }, (_, i) => [
     ((seed + i * 7) % 4) + 7, // deterministic x between 7 and 10
     ((seed + i * 13) % 6) + 1, // deterministic y between 1 and 6
