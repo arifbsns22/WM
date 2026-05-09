@@ -1,34 +1,37 @@
 "use client";
-import React from "react";
-import { Mail, Phone, MapPin, Globe, MailIcon } from "lucide-react";
+
+import { Phone, MapPin, MailIcon } from "lucide-react";
 import { FooterBackgroundGradient, TextHoverEffect } from "./hover-footer";
-import {
-  SiDribbble,
-  SiFacebook,
-  SiInstagram,
-  SiTaketwointeractivesoftware,
-} from "react-icons/si";
-import { IconGlobe } from "@tabler/icons-react";
+import { SiDribbble, SiFacebook, SiInstagram, SiYoutube } from "react-icons/si";
 
 function HoverFooter() {
+  const handleSocialClick = (href: string) => {
+    console.log("Clicking social link:", href);
+    try {
+      window.open(href, "_blank");
+    } catch (error) {
+      console.error("Error opening link:", error);
+    }
+  };
+
   // Footer link data
   const footerLinks = [
     {
       title: "About Us",
       links: [
         { label: "Home", href: "/" },
-        { label: "Contact Us", href: "#" },
-        { label: "Our Works", href: "#" },
-        { label: "About Us", href: "#" },
+        { label: "Contact Us", href: "/contact" },
+        { label: "Our Works", href: "/services" },
+        { label: "About Us", href: "/about" },
       ],
     },
     {
       title: "Helpful Links",
       links: [
-        { label: "All Services", href: "#" },
-        { label: "Web Development", href: "#" },
-        { label: "Graphic Design", href: "#" },
-        { label: "Video Editing", href: "#" },
+        { label: "All Services", href: "/services" },
+        { label: "Web Development", href: "/services/web-development" },
+        { label: "Graphic Design", href: "/services/graphic-design" },
+        { label: "Video Editing", href: "/services/video-editing" },
       ],
     },
   ];
@@ -57,6 +60,16 @@ function HoverFooter() {
       icon: <SiFacebook size={20} />,
       label: "Facebook",
       href: "https://www.facebook.com/WatermelonDigitalMarketingAgency/",
+    },
+    {
+      icon: <SiInstagram size={20} />,
+      label: "Instagram",
+      href: "https://www.instagram.com/watermelon_digi/",
+    },
+    {
+      icon: <SiYoutube size={20} />,
+      label: "Youtube",
+      href: "https://www.youtube.com/@WatermelonDigital",
     },
   ];
 
@@ -126,30 +139,31 @@ function HoverFooter() {
         <hr className="border-t border-gray-700 my-8" />
 
         {/* Footer bottom */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-sm space-y-4 md:space-y-0">
+        <div className="flex flex-col md:flex-row justify-between items-center text-sm space-y-4 md:space-y-0 relative z-50">
           {/* Social icons */}
-          <div className="flex space-x-6 text-gray-400">
+          <div className="flex space-x-6 text-white relative z-50">
             {socialLinks.map(({ icon, label, href }) => (
-              <a
+              <button
                 key={label}
-                href={href}
+                onClick={() => handleSocialClick(href)}
                 aria-label={label}
-                className="hover:text-[#fa883c] transition-colors"
+                className="hover:text-[#fa883c] transition-colors cursor-pointer bg-none border-none p-0 relative z-50 pointer-events-auto"
               >
                 {icon}
-              </a>
+              </button>
             ))}
           </div>
 
           {/* Copyright */}
           <p className="text-center md:text-left">
-            &copy; {new Date().getFullYear()} Watermelon Digital. All rights reserved. V1.0
+            &copy; {new Date().getFullYear()} Watermelon Digital. All rights
+            reserved. V1.1
           </p>
         </div>
       </div>
 
       {/* Text hover effect */}
-      <div className="lg:flex hidden h-[30rem] -mt-30 -mb-36">
+      <div className="lg:flex hidden h-[30rem] -mt-15 -mb-36 pointer-events-none">
         <TextHoverEffect text="Watermelon" className="z-50" />
       </div>
       <FooterBackgroundGradient />

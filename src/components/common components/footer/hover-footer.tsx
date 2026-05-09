@@ -40,7 +40,10 @@ export const TextHoverEffect = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onMouseMove={(e) => setCursor({ x: e.clientX, y: e.clientY })}
-      className={cn("select-none uppercase cursor-pointer", className)}
+      className={cn(
+        "select-none uppercase cursor-pointer pointer-events-auto",
+        className,
+      )}
     >
       <defs>
         <linearGradient
