@@ -47,7 +47,7 @@ export default function FloatingNavBar() {
       backdrop-blur-md bg-white/30 dark:bg-black/30
       border border-white/20 shadow-2xl
     "
-      mobileClassName="translate-y-20"
+      mobileClassName="hidden "
       items={links}
     />
   );

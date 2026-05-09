@@ -99,7 +99,7 @@ export function HeroSection() {
                   </div>
                 </Link>
 
-                <h1 className="mt-8 max-w-4xl mx-auto text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem]">
+                <h1 className="mt-8 max-w-6xl mx-auto text-balance text-4xl md:text-6xl lg:mt-16 xl:text-[5.25rem]">
                   Modern Solutions for Customer Engagement
                 </h1>
                 <p className="mx-auto mt-8 max-w-2xl text-balance text-lg">
@@ -169,21 +169,21 @@ export function HeroSection() {
               ...transitionVariants,
             }}
           >
-            <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
+            <div className="relative mt-8 overflow-hidden px-2 sm:mt-12 md:mt-20">
               <div
                 aria-hidden
                 className="bg-gradient-to-b to-background absolute inset-0 z-10 from-transparent from-35%"
               />
               <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
                 <img
-                  className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
+                  className="bg-background aspect-15/8 relative hidden w-full h-auto rounded-2xl dark:block"
                   src="works/services.jpg"
                   alt="app screen"
                   width="2700"
                   height="1440"
                 />
                 <img
-                  className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
+                  className="z-2 border-border/25 aspect-15/8 relative w-full h-auto rounded-2xl border dark:hidden"
                   src="works/services.jpg"
                   alt="app screen"
                   width="2700"

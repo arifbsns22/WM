@@ -3,30 +3,31 @@ import CardFlip from "./animated-card";
 
 export default function ServiceListCards() {
   return (
-    <>
-      <div className="flex min-h-[200px] items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-foreground text-3xl md:text-5xl">
-            <TextType
-              text={[
-                "Crafting fast modern & user-friendly web experiences",
-                "Designs that make your brand stand out",
-                "Turning raw footage into captivating stories",
-                "Boosting brands with powerful social strategies",
-                "Building smart solutions tailored to your needs",
-                "Bringing ideas to life in stunning 3D",
-              ]}
-              typingSpeed={70}
-              pauseDuration={1500}
-              showCursor={true}
-              cursorCharacter="|"
-              className="text-foreground"
-            />
-          </h1>
+    <section className="w-full overflow-x-hidden bg-background py-12 md:py-20">
+      <div className="container mx-auto px-4">
+        <div className="flex min-h-[160px] items-center justify-center mb-12">
+          <div className="text-center max-w-4xl mx-auto">
+            <h2 className="text-foreground text-3xl md:text-5xl font-medium tracking-tight leading-tight">
+              <TextType
+                text={[
+                  "Crafting fast modern & user-friendly web experiences",
+                  "Designs that make your brand stand out",
+                  "Turning raw footage into captivating stories",
+                  "Boosting brands with powerful social strategies",
+                  "Building smart solutions tailored to your needs",
+                  "Bringing ideas to life in stunning 3D",
+                ]}
+                typingSpeed={70}
+                pauseDuration={1500}
+                showCursor={true}
+                cursorCharacter="|"
+                className="text-foreground"
+              />
+            </h2>
+          </div>
         </div>
-      </div>
-      <div className="grid grid-rows-2">
-        <div className="flex items-center justify-center my-8 gap-20">
+
+        <div className="grid grid-cols-1 gap-y-12 gap-x-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center items-start">
           <CardFlip
             title="Web Development"
             subtitle="Build fast, modern, responsive web experiences"
@@ -61,8 +62,6 @@ export default function ServiceListCards() {
             ]}
             link={"/services/video-editing"}
           />
-        </div>
-        <div className="flex items-center justify-center my-8 gap-20 mb-20">
           <CardFlip
             title="Social Media Marketing"
             subtitle="Grow brands through strategic social media marketing"
@@ -96,6 +95,6 @@ export default function ServiceListCards() {
           />
         </div>
       </div>
-    </>
+    </section>
   );
 }
