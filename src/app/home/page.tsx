@@ -1,7 +1,7 @@
 import CTA from "@/components/common components/cta/cta";
 import Faq from "@/components/common components/faq/faq";
 import Testimonials from "@/components/common components/testimonial/testimonial";
-import IntroAnimation from "@/components/graphic-design/hero";
+import IntroAnimation from "@/app/home/hero/hero2";
 import AboutAndStats01 from "@/components/home-page/about-us";
 import Bentogrid from "@/components/home-page/bento-grid/bentogrid";
 import Services from "@/components/home-page/services/services";
