@@ -40,11 +40,26 @@ const pipelineSteps = [
     id: 2,
     title: "V1.1",
     duration: "09-05-2026",
-    status: "active",
+    status: "completed",
     description: [
       "Footer social media icons clickable to live urls.",
       "All services card mobile responsiveness fixxed.",
       "Navigation bar fixed on mobile devices",
+    ],
+    user: {
+      name: "Mohsin",
+      avatar: "/people/mohsin.jpg",
+    },
+  },
+  {
+    id: 3,
+    title: "V2.0",
+    duration: "10-05-2026",
+    status: "active",
+    description: [
+      "Graphic Design Page hero moved to Home page hero section.",
+      "New Graphic Design page hero section added.",
+      "Bindo Grid (All Services) linkup to individual service pages.",
     ],
     user: {
       name: "Mohsin",

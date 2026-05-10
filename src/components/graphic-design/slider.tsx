@@ -125,7 +125,7 @@ function ImageCarousel() {
                 "md:[&[aria-current='true']]:w-[120%]",
                 "md:[transition:width_var(--transition,300ms_ease_in)]",
               )}
-              key={person.name}
+              key={index}
             >
               <div className="relative h-full w-full overflow-hidden rounded-2xl bg-white  transition-transform duration-500 ease-in-out group-hover:scale-105 group-hover:z-10 transform-gpu">
                 <img
