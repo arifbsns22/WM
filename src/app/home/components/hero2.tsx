@@ -26,6 +26,7 @@ interface FlipCardProps {
   src: string;
   index: number;
   total: number;
+  phase: AnimationPhase;
   target: {
     x: number;
     y: number;
@@ -386,8 +387,8 @@ export default function IntroAnimation() {
                 containerSize.width,
                 containerSize.height,
               );
-              const circleRadius = isMobile 
-                ? Math.min(minDimension * 0.5, 200) 
+              const circleRadius = isMobile
+                ? Math.min(minDimension * 0.5, 200)
                 : Math.min(minDimension * 0.4, 400);
               const circleAngle = (i / TOTAL_IMAGES) * 360;
               const circleRad = (circleAngle * Math.PI) / 180;
