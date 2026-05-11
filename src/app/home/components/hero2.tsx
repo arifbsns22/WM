@@ -11,6 +11,13 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowUpRight, MousePointer2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import router from "next/router";
+import { Instrument_Serif } from "next/font/google";
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["italic"],
+});
 
 // --- Types ---
 export type AnimationPhase = "scatter" | "line" | "circle" | "bottom-strip";
@@ -102,7 +109,7 @@ function FlipCard({ src, index, total, phase, target }: FlipCardProps) {
 
 // --- Main Hero Component ---
 const TOTAL_IMAGES = 20;
-const MAX_SCROLL = 3000;
+const MAX_SCROLL = 1500;
 
 const IMAGES = [
   "/works/gd/1.jpg",
@@ -166,10 +173,14 @@ export default function IntroAnimation() {
     if (!container) return;
 
     const handleWheel = (e: WheelEvent) => {
-      if (scrollRef.current >= MAX_SCROLL && e.deltaY > 0) return;
+      const width = window.innerWidth;
+      const multiplier = width < 768 ? 3.0 : width < 1024 ? 2.0 : 1.0;
+      const delta = e.deltaY * multiplier;
+
+      if (scrollRef.current >= MAX_SCROLL && delta > 0) return;
       e.preventDefault();
       const newScroll = Math.min(
-        Math.max(scrollRef.current + e.deltaY, 0),
+        Math.max(scrollRef.current + delta, 0),
         MAX_SCROLL,
       );
       scrollRef.current = newScroll;
@@ -182,8 +193,13 @@ export default function IntroAnimation() {
     };
     const handleTouchMove = (e: TouchEvent) => {
       const touchY = e.touches[0].clientY;
-      const deltaY = touchStartY - touchY;
+      const rawDeltaY = touchStartY - touchY;
       touchStartY = touchY;
+
+      const width = window.innerWidth;
+      const multiplier = width < 768 ? 3.5 : width < 1024 ? 2.5 : 1.0;
+      const deltaY = rawDeltaY * multiplier;
+
       if (scrollRef.current >= MAX_SCROLL && deltaY > 0) return;
       e.preventDefault();
       const newScroll = Math.min(
@@ -209,12 +225,12 @@ export default function IntroAnimation() {
     };
   }, [virtualScroll]);
 
-  const morphProgress = useTransform(virtualScroll, [0, 600], [0, 1]);
-  const smoothMorph = useSpring(morphProgress, { stiffness: 40, damping: 20 });
+  const morphProgress = useTransform(virtualScroll, [0, 400], [0, 1]);
+  const smoothMorph = useSpring(morphProgress, { stiffness: 60, damping: 20 });
 
-  const scrollRotate = useTransform(virtualScroll, [600, 3000], [0, 360]);
+  const scrollRotate = useTransform(virtualScroll, [400, 1500], [0, 360]);
   const smoothScrollRotate = useSpring(scrollRotate, {
-    stiffness: 40,
+    stiffness: 60,
     damping: 20,
   });
 
@@ -252,6 +268,7 @@ export default function IntroAnimation() {
       opacity: 0,
     }));
   }, []);
+
 
   const [morphValue, setMorphValue] = useState(0);
   const [rotateValue, setRotateValue] = useState(0);
@@ -294,7 +311,9 @@ export default function IntroAnimation() {
             className="text-xl sm:text-2xl lg:text-6xl font-black tracking-tight text-zinc-900 dark:text-white"
           >
             Crafting Digital <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-600 to-rose-600 dark: from-orange-500 via-pink-600 to-rose-600">
+            <span
+              className={`${instrumentSerif.className} text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-600 to-rose-600 dark: from-orange-500 via-pink-600 to-rose-600`}
+            >
               Masterpieces
             </span>
           </motion.h1>

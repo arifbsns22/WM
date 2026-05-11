@@ -160,7 +160,7 @@ export default function CardFlip({
             <div className="space-y-2">
               <div className="mb-2 flex items-center gap-2">
                 <div className="from-primary via-primary/90 to-primary/80 flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br">
-                  <Code2 className="h-4 w-4 text-white" />
+                  <Code2 className="h-4 w-4 text-white dark:text-black" />
                 </div>
                 <h3 className="text-lg leading-snug font-semibold tracking-tight text-zinc-900 transition-all duration-500 ease-out group-hover:translate-y-[-2px] dark:text-white">
                   {title}
@@ -215,7 +215,7 @@ export default function CardFlip({
                 )}
               >
                 <span className="group-hover/start:text-primary text-sm font-semibold text-zinc-900 transition-colors duration-300 dark:text-white">
-                  Start Building
+                  Let's Start Building !
                 </span>
                 <div className="group/icon relative">
                   <div
