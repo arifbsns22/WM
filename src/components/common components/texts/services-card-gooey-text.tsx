@@ -13,8 +13,8 @@ function ServicesCardsGooeyText() {
           "Building smart solutions tailored to your needs",
           "Bringing ideas to life in stunning 3D",
         ]}
-        morphTime={1}
-        cooldownTime={0.25}
+        morphTime={3}
+        cooldownTime={4.5}
         className="font-bold"
       />
     </div>

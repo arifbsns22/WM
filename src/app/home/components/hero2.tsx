@@ -26,7 +26,6 @@ interface FlipCardProps {
   src: string;
   index: number;
   total: number;
-  phase: AnimationPhase;
   target: {
     x: number;
     y: number;
@@ -57,8 +56,8 @@ function FlipCard({ src, index, total, phase, target }: FlipCardProps) {
       }}
       style={{
         position: "absolute",
-        width: IMG_WIDTH,
-        height: IMG_HEIGHT,
+        width: target.scale > 1.2 ? Math.min(target.scale * 60, 120) : 80, // Responsive width
+        height: target.scale > 1.2 ? Math.min(target.scale * 60, 120) : 80,
         transformStyle: "preserve-3d",
         perspective: "1200px",
       }}
@@ -269,7 +268,6 @@ export default function IntroAnimation() {
     }));
   }, []);
 
-
   const [morphValue, setMorphValue] = useState(0);
   const [rotateValue, setRotateValue] = useState(0);
   const [parallaxValue, setParallaxValue] = useState(0);
@@ -291,7 +289,7 @@ export default function IntroAnimation() {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-screen bg-[#FAFAFA] dark:bg-zinc-950 overflow-hidden pt-20"
+      className="relative w-full h-screen bg-[#FAFAFA] dark:bg-zinc-950 overflow-hidden pt-10 md:pt-20"
     >
       {/* Background Texture */}
       <div className="absolute inset-0 opacity-10 dark:opacity-30 bg-[radial-gradient(circle_at_center,_#27272a_0%,_transparent_70%)]" />
@@ -308,7 +306,7 @@ export default function IntroAnimation() {
                 : { opacity: 0, filter: "blur(20px)" }
             }
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="text-xl sm:text-2xl lg:text-6xl font-black tracking-tight text-zinc-900 dark:text-white"
+            className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight text-zinc-900 dark:text-white"
           >
             Crafting Digital <br />
             <span
@@ -327,7 +325,7 @@ export default function IntroAnimation() {
             transition={{ duration: 1, delay: 0.4 }}
             className="mt-8 flex flex-col items-center gap-4"
           >
-            <p className="text-xs sm:text-sm font-bold tracking-[0.4em] text-black dark:text-indigo-400 uppercase">
+            <p className="text-sm sm:text-base font-bold tracking-[0.4em] text-black dark:text-indigo-400 uppercase">
               Scroll Down to Begin Your Journey
             </p>
             <motion.div
@@ -388,13 +386,16 @@ export default function IntroAnimation() {
                 containerSize.width,
                 containerSize.height,
               );
-              const circleRadius = Math.min(minDimension * 0.4, 400);
+              const circleRadius = isMobile 
+                ? Math.min(minDimension * 0.5, 200) 
+                : Math.min(minDimension * 0.4, 400);
               const circleAngle = (i / TOTAL_IMAGES) * 360;
               const circleRad = (circleAngle * Math.PI) / 180;
               const circlePos = {
                 x: Math.cos(circleRad) * circleRadius,
                 y: Math.sin(circleRad) * circleRadius,
                 rotation: circleAngle + 90,
+                scale: isMobile ? 0.8 : 1.0, // Smaller images in circle phase on mobile
               };
 
               const baseRadius = Math.min(
@@ -402,8 +403,9 @@ export default function IntroAnimation() {
                 containerSize.height * 1.5,
               );
               const arcRadius = baseRadius * (isMobile ? 1.5 : 1.2);
-              const arcApexY = containerSize.height * (isMobile ? 0.3 : 0.2);
+              const arcApexY = containerSize.height * (isMobile ? 0.35 : 0.2);
               const arcCenterY = arcApexY + arcRadius;
+
               const spreadAngle = isMobile ? 110 : 140;
               const startAngle = -90 - spreadAngle / 2;
               const step = spreadAngle / (TOTAL_IMAGES - 1);
@@ -427,7 +429,7 @@ export default function IntroAnimation() {
                 x: lerp(circlePos.x, arcPos.x, morphValue),
                 y: lerp(circlePos.y, arcPos.y, morphValue),
                 rotation: lerp(circlePos.rotation, arcPos.rotation, morphValue),
-                scale: lerp(1, arcPos.scale, morphValue),
+                scale: lerp(circlePos.scale, arcPos.scale, morphValue),
                 opacity: 1,
               };
             }
