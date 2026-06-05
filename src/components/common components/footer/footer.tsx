@@ -157,7 +157,7 @@ function HoverFooter() {
           {/* Copyright */}
           <p className="text-center md:text-left">
             &copy; {new Date().getFullYear()} Watermelon Digital. All rights
-            reserved. V2.1
+            reserved. V2.2
           </p>
         </div>
       </div>

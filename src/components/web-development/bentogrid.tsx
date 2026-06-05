@@ -117,7 +117,7 @@ export default function BentoGrid1() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
       <div className="flex items-center justify-center mb-10">
-        <h2 className="text-4xl">
+        <h2 className="text-3xl">
           No matter your business, a website takes you the extra mile
         </h2>
       </div>

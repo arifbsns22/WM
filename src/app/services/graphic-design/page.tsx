@@ -1,11 +1,12 @@
 import CTA from "@/components/common components/cta/cta";
 import Faq from "@/components/common components/faq/faq";
 import ServiceListCards from "@/components/common components/services-list/service-cards";
-import BrandingService from "@/components/graphic-design/barnding-service";
+import BrandingService from "@/components/graphic-design/GraphicDesignFeatures2";
 import GraphicFeature from "@/components/graphic-design/graphic-features";
 import ImageCarousel from "@/components/graphic-design/slider";
-import Team from "@/components/graphic-design/team";
 import { ArcGalleryHero } from "./components/hero";
+import GraphicDesignFeatures1 from "@/components/graphic-design/GraphicDesignFeatures1";
+import GraphicDesignFeatures2 from "@/components/graphic-design/GraphicDesignFeatures2";
 
 const memoryImages = [
   "/works/gd/1.jpg",
@@ -32,8 +33,8 @@ const GraphicDesignPage = () => {
       </div>
       <div className="items-center justify-center ">
         <ImageCarousel />
-        <Team />
-        <BrandingService />
+        <GraphicDesignFeatures1 />
+        <GraphicDesignFeatures2 />
         <ServiceListCards />
         <Faq />
         <CTA />

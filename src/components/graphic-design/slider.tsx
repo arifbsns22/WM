@@ -8,75 +8,61 @@ const classNames = (
 };
 
 interface Person {
-  name: string;
-  title: string;
+ 
   img: string;
 }
 
 const persons: Person[] = [
   {
-    name: "Aria Rossi",
-    title: "Lead Architect",
+   
     img: "/works/gd/1.jpg",
   },
   {
-    name: "Leo Carter",
-    title: "Creative Director",
+   
     img: "/works/gd/2.jpg",
   },
   {
-    name: "Mia Chen",
-    title: "Senior Developer",
+   
     img: "/works/gd/3.jpg",
   },
   {
-    name: "Kai Tanaka",
-    title: "UX/UI Designer",
+  
     img: "/works/gd/4.jpg",
   },
   {
-    name: "Zoe Williams",
-    title: "Project Manager",
+   
     img: "/works/gd/5.jpg",
   },
   {
-    name: "Ethan Hunt",
-    title: "Marketing Head",
+   
     img: "/works/gd/6.jpg",
   },
   {
-    name: "Ethan Hunt",
-    title: "Marketing Head",
+ 
     img: "/works/gd/1.jpg",
   },
   {
-    name: "Ethan Hunt",
-    title: "Marketing Head",
+    
     img: "/works/gd/8.jpg",
   },
   {
-    name: "Ethan Hunt",
-    title: "Marketing Head",
+   
     img: "/works/gd/9.jpg",
   },
   {
-    name: "Chloe Garcia",
-    title: "Data Scientist",
+    
     img: "/works/gd/10.jpg",
   },
   {
-    name: "Noah King",
-    title: "Brand Strategist",
+    
     img: "/works/gd/11.jpg",
   },
   {
-    name: "Ava Martinez",
-    title: "Content Creator",
+    
     img: "/works/gd/13.jpg",
   },
   {
-    name: "Ava Martinez",
-    title: "Content Creator",
+    
     img: "/works/gd/14.jpg",
   },
 ];
@@ -110,52 +96,44 @@ function ImageCarousel() {
 
   return (
     <div className="w-full font-sans">
-      <div className="w-full  p-4 sm:p-6 md:p-8">
+      <div className="w-full p-4 sm:p-6 md:p-8">
         <ul
           ref={wrapperRef}
-          className="flex w-full flex-col gap-2 md:h-[640px] md:flex-row md:gap-[1.5%]"
+          className="flex w-full h-90 gap-4 overflow-x-auto scroll-px-4 snap-x snap-mandatory md:h-160 md:overflow-hidden md:gap-[1.5%] md:snap-none"
         >
           {persons.map((person, index) => (
             <li
               onClick={() => setActiveItem(index)}
               aria-current={activeItem === index}
               className={classNames(
-                "relative group cursor-pointer transition-all duration-500 ease-in-out",
-                "md:w-[8%]",
-                "md:[&[aria-current='true']]:w-[120%]",
+                "relative shrink-0 snap-center cursor-pointer transition-all duration-500 ease-in-out",
+                "min-w-[80%] sm:min-w-[60%] md:w-[8%]",
+                "md:aria-current:w-[120%]",
                 "md:[transition:width_var(--transition,300ms_ease_in)]",
               )}
               key={index}
             >
-              <div className="relative h-full w-full overflow-hidden rounded-2xl bg-white  transition-transform duration-500 ease-in-out group-hover:scale-105 group-hover:z-10 transform-gpu">
+              <div className="relative h-full w-full overflow-hidden rounded-2xl bg-white transition-transform duration-500 ease-in-out group-hover:scale-105 group-hover:z-10 transform-gpu">
                 <img
                   className={classNames(
-                    "absolute left-1/2 top-1/2 h-full w-auto max-w-none -translate-x-1/2 -translate-y-1/2 object-cover transition-all duration-500 ease-in-out",
+                    "absolute inset-0 h-full w-full object-cover transition-all duration-500 ease-in-out",
                     activeItem === index
                       ? "scale-105 grayscale-0"
-                      : "scale-100 grayscale",
+                      : "scale-100 md:grayscale",
                   )}
                   src={person.img}
-                  alt={person.name}
                   width="1500"
                   height="1000"
                 />
-                <div
-                  className={classNames(
-                    "absolute inset-0 transition-opacity duration-500",
-                    activeItem === index ? "opacity-100" : "opacity-0",
-
-                    "md:absolute",
-                  )}
-                />
-                <div
-                  className={classNames(
-                    "absolute bottom-0 left-0 w-full p-6 text-white transition-[transform,opacity] duration-700 ease-in-out md:p-8",
-                    activeItem === index
-                      ? "translate-y-0 opacity-100"
-                      : "translate-y-8 opacity-0",
-                  )}
-                ></div>
+                <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
+                <div className="absolute bottom-0 left-0 w-full p-4 text-white sm:p-6">
+                  <p className="text-base font-semibold sm:text-lg">
+                  
+                  </p>
+                  <p className="mt-1 text-sm opacity-90 sm:text-base">
+                    
+                  </p>
+                </div>
               </div>
             </li>
           ))}
