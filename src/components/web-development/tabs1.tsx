@@ -149,15 +149,7 @@ export default function TabsDemo() {
               className="rounded"
             />
           </a>
-          <a href="https://aynor.co/" target="_blank" rel="noopener noreferrer">
-            <Image
-              src="/works/web/Screenshot-2026-04-13-103706-1024x489.png"
-              alt="all"
-              width={500}
-              height={400}
-              className="rounded"
-            />
-          </a>
+          
         </div>
       </TabsContent>
       <TabsContent

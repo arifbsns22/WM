@@ -73,7 +73,6 @@ function FlipCard({ src, index, total, phase, target }: FlipCardProps) {
           stiffness: 260,
           damping: 20,
         }}
-        whileHover={{ rotateY: 180 }}
       >
         {/* Front Face */}
         <div
@@ -87,21 +86,7 @@ function FlipCard({ src, index, total, phase, target }: FlipCardProps) {
           />
           <div className="absolute inset-0 bg-black/5 dark:bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
         </div>
-
-        {/* Back Face - Glassmorphism */}
-        <div
-          className="absolute inset-0 h-full w-full overflow-hidden rounded-2xl shadow-2xl bg-zinc-900/90 dark:bg-zinc-950/80 backdrop-blur-md flex flex-col items-center justify-center p-4 border border-white/20"
-          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
-        >
-          <div className="text-center">
-            <div className="p-2 bg-white/10 rounded-full mb-2 mx-auto w-fit">
-              <ArrowUpRight size={14} className="text-white" />
-            </div>
-            <p className="text-[10px] font-bold text-white/70 uppercase tracking-[0.2em]">
-              View
-            </p>
-          </div>
-        </div>
+        
       </motion.div>
     </motion.div>
   );

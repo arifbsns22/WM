@@ -1,5 +1,5 @@
 import { TextType } from "../animated-text/text-type";
-import { ServicesCardsGooeyText } from "../texts/services-card-gooey-text";
+import { Typewriter } from "../texts/services-card-gooey-text";
 import CardFlip from "./animated-card";
 
 export default function ServiceListCards() {
@@ -7,8 +7,21 @@ export default function ServiceListCards() {
     <section className="w-full overflow-x-hidden bg-background py-12 md:py-20">
       <div className="container mx-auto px-4">
         <div className="flex min-h-[160px] items-center justify-center mb-12">
-          <div className="text-center max-w-7xl mx-auto w-full">
-            <ServicesCardsGooeyText />
+          <div className="text-center text-4xl sm:text-5xl mx-auto w-full">
+            <Typewriter 
+             text={[
+               "Crafting fast modern & user-friendly web experiences..",
+               "Designs that make your brand stand out..",
+               "Turning raw footage into captivating stories..",
+               "Boosting brands with powerful social strategies..",
+               "Building smart solutions tailored to your needs..",
+               "Bringing ideas to life in stunning 3D..",
+             ]}
+             speed={100}
+             deleteSpeed={50}
+             delay={1500}
+             loop={true}
+            />
           </div>
         </div>
 

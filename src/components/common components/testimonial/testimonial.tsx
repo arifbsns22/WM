@@ -26,8 +26,8 @@ const Testimonials = () => {
             >
               Testimonials
             </Badge>
-            <h2 className="text-foreground text-3xl sm:text-5xl font-medium max-w-xs sm:max-w-2xl mx-auto text-center">
-              What our satisfied customers are saying about us
+            <h2 className="text-foreground text-2xl sm:text-5xl font-medium max-w-xs sm:max-w-2xl mx-auto text-center">
+              What our satisfied customers are saying about us...
             </h2>
           </motion.div>
           {/* Grid */}
